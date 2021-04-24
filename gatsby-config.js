@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "polenta",
@@ -6,8 +10,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "2y2B7Eq1nXFrNuOhjve3XxsVqdpJOFr7UJhELBFBQW0",
-        spaceId: "ip0p3v3kqvk3",
+        accessToken: process.env.ACCESS_TOKEN,
+        spaceId: process.env.SPACE_ID,
       },
     },
     "gatsby-plugin-sass",
@@ -32,4 +36,4 @@ module.exports = {
       __key: "images",
     },
   ],
-};
+}
