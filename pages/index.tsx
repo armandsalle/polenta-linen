@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
   return (
     <div>
       <Head>
@@ -11,3 +11,5 @@ export default function Home(): JSX.Element {
     </div>
   )
 }
+
+export default Home
