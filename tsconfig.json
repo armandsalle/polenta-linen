@@ -19,8 +19,7 @@
       "@/utils/*": ["utils/*"],
       "@/components/*": ["components/*"],
       "@/pages/*": ["pages/*"],
-      "@/api/*": ["pages/api/*"],
-      "@/test/*": ["test/*"]
+      "@/styles/*": ["styles/*"]
     }
   },
   "exclude": ["node_modules", ".next", "out"],
