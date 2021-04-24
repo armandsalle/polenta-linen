@@ -52,6 +52,6 @@ h1 {
   }
 
   @include media("<phone") {
-    font-size: .2rem;
+    font-size: 0.2rem;
   }
 }

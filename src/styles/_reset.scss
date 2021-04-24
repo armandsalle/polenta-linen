@@ -88,12 +88,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -108,82 +108,82 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  outline: none;
 
-    background: transparent;
+  background: transparent;
 
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
-    text-align: inherit;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
 
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
 
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
 }
 
 /* Remove excess padding and border in Firefox 4+ */
 button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 textarea {
-    border: none;
-    overflow: auto;
-    outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    resize: none;
-    /*remove the resize handle on the bottom right*/
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  /*remove the resize handle on the bottom right*/
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ----------------------------------------------------------------------------------------------------
@@ -204,23 +204,23 @@ label,
 select,
 button,
 textarea {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    display: inline-block;
-    vertical-align: middle;
-    white-space: normal;
-    background: none;
-    line-height: 1;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
 
-    /* Browsers have different default form fonts */
-    font-size: 13px;
-    font-family: Arial;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial;
 }
 
 /* Remove the stupid outer glow in Webkit */
 input:focus {
-    outline: 0;
+  outline: 0;
 }
 
 /* Box Sizing Reset
@@ -229,68 +229,70 @@ input:focus {
 /* All of our custom controls should be what we expect them to be */
 input,
 textarea {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 /* These elements are usually rendered a certain way by the browser */
 button,
-input[type=reset],
-input[type=button],
-input[type=submit],
-input[type=checkbox],
-input[type=radio],
+input[type="reset"],
+input[type="button"],
+input[type="submit"],
+input[type="checkbox"],
+input[type="radio"],
 select {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Text Inputs
 -----------------------------------------------*/
 
-input[type=date],
-input[type=datetime],
-input[type=datetime-local],
-input[type=email],
-input[type=month],
-input[type=number],
-input[type=password],
-input[type=range],
-input[type=search],
-input[type=tel],
-input[type=text],
-input[type=time],
-input[type=url],
-input[type=week] {}
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+}
 
 /* Button Controls
 -----------------------------------------------*/
 
-input[type=checkbox],
-input[type=radio] {
-    width: 13px;
-    height: 13px;
+input[type="checkbox"],
+input[type="radio"] {
+  width: 13px;
+  height: 13px;
 }
 
 /* File Uploads
 -----------------------------------------------*/
 
-input[type=file] {}
+input[type="file"] {
+}
 
 /* Search Input
 -----------------------------------------------*/
 
 /* Make webkit render the search input like a normal text field */
-input[type=search] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
 }
 
 /* Turn off the recent search for webkit. It adds about 15px padding on the left */
 ::-webkit-search-decoration {
-    display: none;
+  display: none;
 }
 
 /* Buttons
@@ -300,35 +302,36 @@ button,
 input[type="reset"],
 input[type="button"],
 input[type="submit"] {
-    /* Fix IE7 display bug */
-    overflow: visible;
-    width: auto;
+  /* Fix IE7 display bug */
+  overflow: visible;
+  width: auto;
 }
 
 /* IE8 and FF freak out if this rule is within another selector */
 ::-webkit-file-upload-button {
-    padding: 0;
-    border: 0;
-    background: none;
+  padding: 0;
+  border: 0;
+  background: none;
 }
 
 /* Textarea
 -----------------------------------------------*/
 
 textarea {
-    /* Move the label to the top */
-    vertical-align: top;
+  /* Move the label to the top */
+  vertical-align: top;
 
-    /* Turn off scroll bars in IE unless needed */
-    overflow: auto;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
 }
 
 /* Selects
 -----------------------------------------------*/
 
-select {}
+select {
+}
 
 select[multiple] {
-    /* Move the label to the top */
-    vertical-align: top;
+  /* Move the label to the top */
+  vertical-align: top;
 }
