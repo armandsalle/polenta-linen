@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client'
-import { seoFragment } from '../SEO/gql'
+import { seoFragment } from '@/lib/queries/SEO/gql'
 
 export const storyQuery = gql`
   query StoryQuery {
