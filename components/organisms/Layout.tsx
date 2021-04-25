@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Header from '@/components/organisms/Header'
+import Footer from './Footer'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -18,9 +20,9 @@ const Layout = ({ children, SEO }: LayoutProps): JSX.Element => {
       </Head>
 
       <main>
-        <nav>Prout plop plip</nav>
+        <Header />
         {children}
-        <footer>Footer</footer>
+        <Footer />
       </main>
     </>
   )
