@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+import { seoFragment } from '@/lib/queries/SEO/gql'
 
 export const storyQuery = gql`
   query StoryQuery {
@@ -9,8 +10,10 @@ export const storyQuery = gql`
       }
       signature
       photo {
+        title
         url(transform: { width: 560 })
       }
+      ${seoFragment}
     }
   }
 `

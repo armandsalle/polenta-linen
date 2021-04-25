@@ -3,6 +3,7 @@ import type { Story as StoryType } from '@/lib/queries/story/types'
 
 import { client } from '@/lib/client'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import ResponsiveImage from '@/components/atoms/ResponsiveImage'
 
 type StoryProps = {
   story: StoryType
@@ -11,11 +12,16 @@ type StoryProps = {
 const Story = ({ story }: StoryProps): JSX.Element => {
   return (
     <div>
-      <img src={story.photo.url} />
       <h1>{story.title}</h1>
-
+      <p>{story.seo.description}</p>
+      <p>{story.seo.title}</p>
+      <p>{story.seo.ogImage.url}</p>
       {documentToReactComponents(story.description.json)}
-
+      <ResponsiveImage
+        className="m"
+        src={story.photo.url}
+        alt={story.photo.title}
+      />
       <p>{story.signature}</p>
     </div>
   )
