@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 11rem;
+  padding: 0 6.5rem;
+  border-bottom: 1px solid var(--color-black);
+}
+.logo {
+  height: 2rem;
+  width: 31.7rem;
+}
+.burger {
+  height: 2rem;
+  width: 3rem;
+}
+.search {
+  height: 2.7rem;
+  width: 2.7rem;
+}
