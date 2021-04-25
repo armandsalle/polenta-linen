@@ -4,9 +4,15 @@ import {
   NormalizedCacheObject,
 } from '@apollo/client'
 
-import type { Story, StoryData } from './queries/story/types'
+import type { Story, StoryData } from '@/lib/queries/story/types'
+import type { Recipe, RecipeData } from '@/lib/queries/recipe/types'
+import type { Item, RecipesData } from '@/lib/queries/recipes/types'
+import type { Home, HomeData } from '@/lib/queries/home/types'
 
-import { storyQuery } from './queries/story/gql'
+import { storyQuery } from '@/lib/queries/story/gql'
+import { homeQuery } from '@/lib/queries/home/gql'
+import { recipesQuery } from '@/lib/queries/recipes/gql'
+import { recipeQuery } from '@/lib/queries/recipe/gql'
 
 export class Client {
   uri: string
@@ -33,6 +39,37 @@ export class Client {
     const story = data.story
 
     return { story }
+  }
+
+  getHome = async (): Promise<{ home: Home }> => {
+    const { data }: HomeData = await this.client.query({
+      query: homeQuery,
+    })
+
+    const home = data.home
+
+    return { home }
+  }
+
+  getAllRecipes = async (): Promise<{ items: Item[] }> => {
+    const { data }: RecipesData = await this.client.query({
+      query: recipesQuery,
+    })
+
+    const items = data.recipeCollection.items
+
+    return { items }
+  }
+
+  getRecipe = async (id: string): Promise<{ recipe: Recipe }> => {
+    const { data }: RecipeData = await this.client.query({
+      query: recipeQuery,
+      variables: { id },
+    })
+
+    const recipe = data.recipe
+
+    return { recipe }
   }
 }
 

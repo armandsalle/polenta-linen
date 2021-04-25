@@ -29,14 +29,11 @@ const Story = ({ story }: StoryProps): JSX.Element => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { story } = await client.getStory()
-  // const { layout, site } = await client.getLayout()
 
   return {
     props: {
       story,
-      // layoutContent: layout,
-      // siteContent: site,
-      SEO: story.title,
+      SEO: story.seo,
     },
   }
 }
