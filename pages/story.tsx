@@ -13,7 +13,9 @@ const Story = ({ story }: StoryProps): JSX.Element => {
   return (
     <div>
       <h1>{story.title}</h1>
-
+      <p>{story.seo.description}</p>
+      <p>{story.seo.title}</p>
+      <p>{story.seo.ogImage.url}</p>
       {documentToReactComponents(story.description.json)}
       <ResponsiveImage
         className="m"
