@@ -1,6 +1,6 @@
 import type { Document } from '@contentful/rich-text-types'
 import type { Photo } from '@/lib/shared/types/photo'
-import type { SEO } from '@/lib/queries/SEO/types'
+import type { SEO } from '@/lib/shared/SEO/types'
 
 export interface RecipeData {
   data: RecipeContent

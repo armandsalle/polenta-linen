@@ -1,5 +1,5 @@
 import type { Document } from '@contentful/rich-text-types'
-import type { SEOContent } from '@/lib/queries/SEO/types'
+import type { SEOContent } from '@/lib/shared/SEO/types'
 import type { Photo } from '@/lib/shared/types/photo'
 
 export interface StoryData {

@@ -2,13 +2,20 @@ import type { Recipe as RecipeType } from '@/lib/queries/recipe/types'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 
 import { client } from '@/lib/client'
+import Title, { asLevel } from '@/components/atoms/Title'
 
 type RecipeProps = {
   recipe: RecipeType
 }
 
 const Recipe = ({ recipe }: RecipeProps): JSX.Element => {
-  return <div>{recipe.title}</div>
+  return (
+    <div>
+      <Title as={asLevel.h1} isSplit={true}>
+        {recipe.title}
+      </Title>
+    </div>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
