@@ -12,7 +12,7 @@ type TitleProps = {
 }
 
 const Title = ({ children, isSplit = false, as }: TitleProps): JSX.Element => {
-  const text = children.split(' ')
+  const text = children.trim().split(' ')
   const end = text.splice(-1, 1)
   const start = text.join(' ')
 
@@ -23,7 +23,7 @@ const Title = ({ children, isSplit = false, as }: TitleProps): JSX.Element => {
           {start} <span className="italic">{end}</span>
         </>
       )}
-      {!isSplit && children}
+      {!isSplit && children.trim()}
     </>
   )
   switch (as) {

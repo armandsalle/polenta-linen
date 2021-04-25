@@ -1,6 +1,6 @@
-import { Photo } from '@/lib/shared/types/photo'
-import { Document } from '@contentful/rich-text-types'
-import { SEOContent } from '@/lib/queries/SEO/types'
+import type { Document } from '@contentful/rich-text-types'
+import type { SEOContent } from '@/lib/queries/SEO/types'
+import type { Photo } from '@/lib/shared/types/photo'
 
 export interface StoryData {
   data: StoryContent
