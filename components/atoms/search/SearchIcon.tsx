@@ -1,4 +1,4 @@
-const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => {
+const SearchIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
   return (
     <svg
       className="search"

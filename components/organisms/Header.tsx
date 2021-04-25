@@ -1,6 +1,6 @@
 import Burger from '@/components/atoms/nav/Burger'
 import SearchIcon from '@/components/atoms/search/SearchIcon'
-import PolentaIcon from '../atoms/polenta/PolentaIcon'
+import PolentaIcon from '@/components/atoms/polenta/PolentaIcon'
 
 const Header = (): JSX.Element => {
   return (

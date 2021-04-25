@@ -1,4 +1,4 @@
-const PolentaIcon = (props: React.SVGProps<SVGSVGElement>) => {
+const PolentaIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
   return (
     <svg
       className="logo"
