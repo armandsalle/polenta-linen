@@ -4,7 +4,6 @@ import { gql } from '@apollo/client'
 export const recipeQuery = gql`
   query Recipe($id: String!) {
     recipe(id: $id) {
-      recipe(id: "erRu6EJFZaRzbuICgthta") {
         title
         subtitle
         thumbnail {
@@ -30,7 +29,6 @@ export const recipeQuery = gql`
           }
         }
         ${seoFragment}
-      }
     }
   }
 `
