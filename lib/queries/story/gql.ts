@@ -9,6 +9,7 @@ export const storyQuery = gql`
       }
       signature
       photo {
+        title
         url(transform: { width: 560 })
       }
     }

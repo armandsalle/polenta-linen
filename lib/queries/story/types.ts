@@ -1,3 +1,4 @@
+import { Photo } from '@/lib/shared/types/photo'
 import { Document } from '@contentful/rich-text-types'
 
 export interface StoryData {
@@ -17,8 +18,4 @@ export interface Story {
 
 export interface Description {
   json: Document
-}
-
-export interface Photo {
-  url: string
 }
