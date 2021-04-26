@@ -5,16 +5,36 @@
   height: 11rem;
   padding: 0 6.5rem;
   border-bottom: 1px solid var(--color-black);
+
+  @include media('<phone') {
+    height: 6rem;
+    padding: 0 2rem;
+  }
 }
 .logo {
   height: 2rem;
   width: 31.7rem;
+
+  @include media('<phone') {
+    height: 1rem;
+    width: 15.4rem;
+  }
 }
 .burger {
   height: 2rem;
   width: 3rem;
+
+  @include media('<phone') {
+    height: 1rem;
+    width: 2rem;
+  }
 }
 .search {
   height: 2.7rem;
   width: 2.7rem;
+
+  @include media('<phone') {
+    height: 1rem;
+    width: 1rem;
+  }
 }
