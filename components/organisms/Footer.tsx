@@ -10,19 +10,19 @@ const Footer = (): JSX.Element => {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/all">
             <a className="footer__link footer__link__effect">ALL RECIPES</a>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/heritage">
             <a className="footer__link footer__link__effect">
               HERITAGE RECIPES
             </a>
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/story">
             <a className="footer__link footer__link__effect">MY STORY</a>
           </Link>
         </li>
