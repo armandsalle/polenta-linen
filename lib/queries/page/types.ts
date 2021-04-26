@@ -1,4 +1,5 @@
 import type { SEO } from '@/lib/shared/SEO/types'
+import type { Photo } from '@/lib/shared/types/photo'
 
 export interface PageData {
   data: PageContent
@@ -19,11 +20,6 @@ export interface RecipesCollection {
 
 export interface Item {
   title: string
-  thumbnail: Thumbnail
+  thumbnail: Photo
   uid: string
-}
-
-export interface Thumbnail {
-  title: string
-  url: string
 }
