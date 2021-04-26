@@ -1,4 +1,4 @@
-import type { SEOContent } from '@/lib/queries/SEO/types'
+import type { SEOContent } from '@/lib/shared/SEO/types'
 
 import Header from '@/components/organisms/Header'
 import Footer from '@/components/organisms/Footer'

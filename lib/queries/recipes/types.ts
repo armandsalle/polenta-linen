@@ -1,3 +1,5 @@
+import type { Sys } from '@/lib/shared/types/Sys'
+
 export interface RecipesData {
   data: RecipesContent
 }
@@ -13,8 +15,4 @@ export interface Recipes {
 export interface Item {
   uid: string
   sys: Sys
-}
-
-export interface Sys {
-  id: string
 }
