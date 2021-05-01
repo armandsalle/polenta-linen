@@ -2,7 +2,7 @@ import type { Recipe as RecipeType } from '@/lib/queries/recipe/types'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 
 import { client } from '@/lib/client'
-import Title, { asLevel } from '@/components/atoms/Title'
+import Title from '@/components/atoms/Title'
 
 type RecipeProps = {
   recipe: RecipeType
@@ -11,7 +11,7 @@ type RecipeProps = {
 const Recipe = ({ recipe }: RecipeProps): JSX.Element => {
   return (
     <div>
-      <Title as={asLevel.h1} isSplit={true}>
+      <Title as="h1" isSplit={true}>
         {recipe.title}
       </Title>
     </div>

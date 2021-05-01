@@ -1,7 +1,7 @@
 import type { Home as HomeType } from '@/lib/queries/home/types'
 import type { GetStaticProps } from 'next'
 
-import Title, { asLevel } from '@/components/atoms/Title'
+import Title from '@/components/atoms/Title'
 import { client } from '@/lib/client'
 
 type HomeProps = {
@@ -11,12 +11,12 @@ type HomeProps = {
 const Home = ({ home }: HomeProps): JSX.Element => {
   return (
     <div>
-      <Title as={asLevel.h1} isSplit={true}>
+      <Title as="h1" isSplit={true}>
         {home.title}
       </Title>
       {home.featuredPageCollection.items.map((el, i) => (
         <div key={i}>
-          <Title as={asLevel.h3} isSplit={true}>
+          <Title as="h3" isSplit={true}>
             {el.title}
           </Title>
           {/* <Link href={el.page.uid}>
