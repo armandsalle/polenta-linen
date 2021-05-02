@@ -3,25 +3,43 @@ import type { Page as PageType } from '@/lib/queries/page/types'
 
 import { client } from '@/lib/client'
 import Link from 'next/link'
+import Title from '@/components/atoms/Title'
+import RecipesNavigation from '@/components/molecules/RecipesNavigation'
+import ResponsiveImage from '@/components/atoms/ResponsiveImage'
+import { Item } from '@/lib/queries/pages/types'
 
 type PageProps = {
   page: PageType
+  pages: Item[]
 }
 
-const Page = ({ page }: PageProps): JSX.Element => {
+const Page = ({ page, pages }: PageProps): JSX.Element => {
+  const filteredPages = pages.filter((e) => e.uid !== 'all')
   return (
-    <div>
-      {page.recipesCollection.items.map((el, i) => {
-        return (
-          <Link href={`/recipe/${el.uid}`} key={i}>
-            <a>
-              <img src={el.thumbnail.url} alt={el.thumbnail.title} />
-              <p>{el.title}</p>
-            </a>
-          </Link>
-        )
-      })}
-    </div>
+    <section>
+      <div className="recipe-preview__header">
+        <Title isSplit={true} as="h1">
+          all recipes
+        </Title>
+        <RecipesNavigation pages={filteredPages} />
+      </div>
+      <div className="container recipe-preview">
+        {page.recipesCollection.items.map((el, i) => {
+          return (
+            <Link href={`/recipe/${el.uid}`} key={i}>
+              <a className="recipe-preview__link">
+                <ResponsiveImage
+                  className="recipe-preview__image"
+                  src={el.thumbnail.url}
+                  alt={el.thumbnail.title}
+                />
+                <p className="recipe-preview__title">{el.title}</p>
+              </a>
+            </Link>
+          )
+        })}
+      </div>
+    </section>
   )
 }
 
@@ -34,6 +52,7 @@ export const getStaticProps: GetStaticProps = async ({
 
   return {
     props: {
+      pages,
       page,
       SEO: page.seo,
     },

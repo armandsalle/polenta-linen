@@ -1,0 +1,56 @@
+.recipe-preview {
+  margin-top: 3rem;
+  margin-bottom: 9rem;
+  max-width: 33.6rem;
+  width: 100%;
+
+  @include media('>landscape') {
+    margin-top: 6.5rem;
+    margin-bottom: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 59rem;
+    display: grid;
+    grid-template-columns: repeat(2, 28.4rem);
+    gap: 3.3rem 2rem;
+  }
+
+  @include media('>tablet') {
+    max-width: 89rem;
+    grid-template-columns: repeat(3, 28.4rem);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 17.5rem;
+    border-bottom: 0.1rem solid var(--color-black);
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin-bottom: 3.5rem;
+  }
+
+  &__image {
+    width: 33.5rem;
+    height: 33.5rem;
+
+    @include media('>landscape') {
+      width: 28.4rem;
+      height: 28.4rem;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: 'EB Garamond';
+    font-size: 1.5rem;
+    letter-spacing: 0.12rem;
+    color: var(--color-black);
+    margin-top: 1.8rem;
+  }
+}
