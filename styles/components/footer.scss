@@ -1,43 +1,42 @@
 .footer {
   border-top: 1px solid var(--color-black);
   border-bottom: 1px solid var(--color-black);
-  padding-left: 6.5rem;
+  padding-left: 3.2rem;
 
-  @include media('<phone') {
-    padding-left: 3.2rem;
+  @include media('>phone') {
+    padding-left: 6.5rem;
   }
 }
+
 .footer__links {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 5.5rem 0;
+  padding: 2.5rem 0;
 
-  @include media('<phone') {
-    padding: 2.5rem 0;
+  @include media('>tablet') {
+    padding: 5.5rem 0;
   }
 }
+
 .footer__link {
   position: relative;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 500;
   font-family: 'EB Garamond';
   color: var(--color-black);
   text-decoration: none;
   letter-spacing: 0.12em;
-  margin-right: 6rem;
+  margin-right: 1.2rem;
 
-  @include media('<landscape') {
+  @include media('>tablet') {
     font-size: 1.5rem;
     margin-right: 4.5rem;
   }
-
-  @include media('<phone') {
-    font-size: 1.2rem;
-    margin-right: 1.2rem;
-  }
 }
+
 @media (hover: hover) {
+
   .footer__link::before,
   .footer__link::after {
     position: absolute;

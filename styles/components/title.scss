@@ -9,18 +9,8 @@
 }
 
 .h1 {
-  font-size: 6rem;
-  line-height: 1.15;
-
-  @include media('<landscape') {
-    font-size: 4.5rem;
-    line-height: 1.125;
-  }
-
-  @include media('<phone') {
-    font-size: 4rem;
-    line-height: 1.125;
-  }
+  font-size: clamp(4.2rem, 11.2vw, 4.5rem);
+  line-height: 0.87;
 }
 
 .h2 {

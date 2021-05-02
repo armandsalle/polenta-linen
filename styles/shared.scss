@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  /* &.--story {
+    max-width: clamp(calc(86.7rem), calc(83.29vw), calc(118.5rem));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } */
+}
+
+/* .story-content {
+  margin-left: clamp(5.9rem, 4.51vw, 6.5rem);
+  width: clamp(39.2rem, 47.5vw, 65.8rem);
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 39rem;
+  }
+
+  .story-text {
+    p {
+      font-size: clamp(1.6rem, 1.73vw, 2.5rem);
+    }
+  }
+} */
