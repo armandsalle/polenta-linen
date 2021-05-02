@@ -1,16 +1,15 @@
 .recipe-preview {
+  display: grid;
+  grid-template-columns: repeat(1, 33.6rem);
+  gap: 3.5rem;
   margin-top: 3rem;
   margin-bottom: 9rem;
   max-width: 33.6rem;
   width: 100%;
 
   @include media('>landscape') {
-    margin-top: 6.5rem;
-    margin-bottom: 10rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 6.5rem auto 10rem auto;
     max-width: 59rem;
-    display: grid;
     grid-template-columns: repeat(2, 28.4rem);
     gap: 3.3rem 2rem;
   }
@@ -20,28 +19,69 @@
     grid-template-columns: repeat(3, 28.4rem);
   }
 
+  @include media('>desktop') {
+    margin-bottom: 12rem;
+    max-width: 131.1rem;
+    grid-template-columns: repeat(3, 42.3rem);
+    gap: 5.5rem 2rem;
+  }
+
+  @include media('>desktop-xl') {
+    margin-top: 7rem;
+    max-width: 177.4rem;
+    grid-template-columns: repeat(3, 56.5rem);
+    gap: 5.5rem 3.8rem;
+  }
+
   &__header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 17.5rem;
+    padding-top: 23.5rem;
     border-bottom: 0.1rem solid var(--color-black);
+
+    @include media('>phone') {
+      padding-top: 28.5rem;
+    }
+
+    & .h1 {
+      @include media('>tablet') {
+        font-size: 5.5rem;
+      }
+      @include media('>desktop') {
+        font-size: 6rem;
+      }
+    }
   }
 
-  a {
+  &__link {
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    margin-bottom: 3.5rem;
   }
 
   &__image {
     width: 33.5rem;
     height: 33.5rem;
+    overflow: hidden;
+
+    & > div {
+      transition: transform 0.15s ease-out;
+    }
 
     @include media('>landscape') {
       width: 28.4rem;
       height: 28.4rem;
+    }
+
+    @include media('>desktop') {
+      width: 42.3rem;
+      height: 42.3rem;
+    }
+
+    @include media('>desktop-xl') {
+      width: 56.5rem;
+      height: 56.5rem;
     }
   }
 
@@ -52,5 +92,18 @@
     letter-spacing: 0.12rem;
     color: var(--color-black);
     margin-top: 1.8rem;
+
+    @include media('>desktop') {
+      font-size: 1.8rem;
+    }
+
+    @include media('>desktop-xl') {
+      font-size: 2rem;
+    }
+  }
+}
+@media (hover: hover) {
+  .recipe-preview__link:hover .recipe-preview__image > div {
+    transform: scale(1.05);
   }
 }
