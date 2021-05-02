@@ -12,22 +12,24 @@ type StoryProps = {
 
 const Story = ({ story }: StoryProps): JSX.Element => {
   return (
-    <div className="container --story">
-      <ResponsiveImage
-        className="m"
-        src={story.photo.url}
-        alt={story.photo.title}
-      />
-      <section className="story-content">
+    <section className="container story">
+      <div className="story__hero">
+        <ResponsiveImage
+          className="story__image"
+          src={story.photo.url}
+          alt={story.photo.title}
+        />
+      </div>
+      <div className="story__content">
         <Title isSplit={true} as="h1">
           {story.title}
         </Title>
-        <div className="story-text">
+        <div className="story__text">
           {documentToReactComponents(story.description.json)}
         </div>
         <p className="signature">{story.signature}</p>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 
