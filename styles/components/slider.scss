@@ -1,10 +1,15 @@
 .swiper-pagination {
   position: absolute;
-  bottom: 1rem;
+  bottom: 2rem;
   left: 50%;
   z-index: 2;
   display: flex;
   transform: translateX(-50%);
+
+  @include media('>tablet') {
+    left: 3rem;
+    transform: none;
+  }
 }
 
 .swiper-pagination-bullet {
