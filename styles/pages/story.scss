@@ -1,0 +1,132 @@
+.story {
+  display: flex;
+  flex-direction: column;
+
+  @include media('>tablet') {
+    max-width: 86.7rem;
+    margin-top: 10rem;
+    margin-bottom: 9rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @include media('>desktop') {
+    max-width: 118.5rem;
+    margin-top: 7.6rem;
+    margin-bottom: 7.7rem;
+    align-items: center;
+  }
+
+  @include media('>desktop-xl') {
+    max-width: 154.6rem;
+    margin-top: 11.5rem;
+    margin-bottom: 11.5rem;
+  }
+
+  &__hero {
+    position: relative;
+    width: 100vw;
+    height: 51.2rem;
+    overflow: hidden;
+
+    @include media('>tablet') {
+      width: 41rem;
+      height: 56.6rem;
+      flex: 0 0 auto;
+    }
+
+    @include media('>desktop') {
+      width: 46.2rem;
+      height: 62.9rem;
+    }
+
+    @include media('>desktop-xl') {
+      width: 58rem;
+      height: 79rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px var(--color-black) solid;
+
+    @include media('>tablet') {
+      border-bottom: none;
+    }
+  }
+
+  &__content {
+    padding: 6.5rem 2rem 9rem 2rem;
+    width: 100%;
+    max-width: 66rem;
+    margin: 0 auto;
+
+    & .h1 {
+      @include media('>tablet') {
+        font-size: 4.5rem;
+      }
+
+      @include media('>desktop') {
+        font-size: 6rem;
+      }
+    }
+
+    @include media('>tablet') {
+      padding: 0;
+      margin: 39rem 0 0 5.9rem;
+      max-width: unset;
+    }
+
+    @include media('>desktop') {
+      margin-top: 0;
+      margin-left: 6.5rem;
+      width: 65.8rem;
+    }
+
+    @include media('>desktop-xl') {
+      width: 72.4rem;
+      margin-left: auto;
+    }
+  }
+
+  &__text {
+    margin: 3.5rem 0;
+
+    @include media('>desktop') {
+      margin: 5.5rem 0;
+    }
+
+    @include media('>desktop-xl') {
+      max-width: 67.5rem;
+    }
+
+    & p {
+      font-size: clamp(1.6rem, 4.26vw, 1.8rem);
+      letter-spacing: .01em;
+
+      @include media('>desktop') {
+        font-size: 2.5rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .signature {
+    font-size: 2.5rem;
+    line-height: 1.6;
+    letter-spacing: .01em;
+    font-family: 'Nothing';
+
+    @include media('>tablet') {
+      font-size: 2rem;
+      line-height: 2;
+    }
+
+    @include media('>desktop') {
+      font-size: 3rem;
+      line-height: 1.33;
+    }
+  }
+}

@@ -14,7 +14,7 @@ export interface Recipe {
   title: string
   subtitle: string
   thumbnail: Photo
-  cooksNote: null
+  cooksNote: null | Ingredients
   plating: Ingredients
   preparation: Ingredients
   ingredients: Ingredients
