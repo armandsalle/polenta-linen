@@ -1,15 +1,21 @@
 type asLevel = 'h1' | 'h2' | 'h3' | 'h4'
 
 type TitleProps = {
-  children: string
+  children: string | React.ReactNode
   isSplit?: boolean
   as: asLevel
 }
 
 const Title = ({ children, isSplit = false, as }: TitleProps): JSX.Element => {
-  const text = children.trim().split(' ')
-  const end = text.splice(-1, 1)
-  const start = text.join(' ')
+  let text
+  let end
+  let start
+
+  if (typeof children === 'string') {
+    text = children.trim().split(' ')
+    end = text.splice(-1, 1)
+    start = text.join(' ')
+  }
 
   const result = (
     <>
@@ -18,7 +24,8 @@ const Title = ({ children, isSplit = false, as }: TitleProps): JSX.Element => {
           {start} <span className="italic">{end}</span>
         </>
       )}
-      {!isSplit && children.trim()}
+      {!isSplit && typeof children === 'string' && children.trim()}
+      {!isSplit && typeof children !== 'string' && children}
     </>
   )
   switch (as) {
