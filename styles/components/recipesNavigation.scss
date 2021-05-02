@@ -1,0 +1,21 @@
+.navigation__recipe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0 2rem;
+  max-width: 38.4rem;
+  margin: 5rem auto 6rem auto;
+
+  @include media('>landscape') {
+    max-width: 100%;
+  }
+
+  @include media('>tablet') {
+    margin-top: 5.6rem;
+  }
+
+  @include media('>desktop') {
+    margin-top: 14rem;
+    margin-bottom: 7rem;
+  }
+}
