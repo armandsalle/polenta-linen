@@ -1,11 +1,16 @@
 .story {
   display: flex;
   flex-direction: column;
+  margin-top: 6rem;
+
+  @include media('>phone') {
+    margin-top: 11rem;
+  }
 
   @include media('>tablet') {
     max-width: 86.7rem;
-    margin-top: 10rem;
     margin-bottom: 9rem;
+    margin-top: 20rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -13,14 +18,14 @@
 
   @include media('>desktop') {
     max-width: 118.5rem;
-    margin-top: 7.6rem;
+    margin-top: 18.5rem;
     margin-bottom: 7.7rem;
     align-items: center;
   }
 
   @include media('>desktop-xl') {
     max-width: 154.6rem;
-    margin-top: 11.5rem;
+    margin-top: 22.4rem;
     margin-bottom: 11.5rem;
   }
 

@@ -45,6 +45,7 @@
   &__header {
     position: relative;
     padding-bottom: 6rem;
+    margin-top: 6rem;
     width: 100%;
 
     &::after {
@@ -62,10 +63,14 @@
       }
     }
 
+    @include media('>phone') {
+      margin-top: 11rem;
+    }
+
     @include media('>tablet') {
       max-width: 83.6rem;
       margin: 0 auto;
-      padding-top: 12rem;
+      padding-top: 23rem;
       padding-bottom: 12rem;
       display: flex;
       flex-direction: row-reverse;
@@ -74,13 +79,13 @@
     }
 
     @include media('>desktop') {
-      padding-top: 14rem;
+      padding-top: 24.9rem;
       padding-bottom: 14rem;
       max-width: 110.7rem;
     }
 
     @include media('>desktop-xl') {
-      padding-top: 10.4rem;
+      padding-top: 21.3rem;
       padding-bottom: 12rem;
       max-width: 135.2rem;
     }
