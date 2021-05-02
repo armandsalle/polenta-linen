@@ -11,6 +11,10 @@
 .h1 {
   font-size: clamp(4.2rem, 11.2vw, 4.5rem);
   line-height: 0.87;
+
+  @include media('>desktop') {
+    font-size: 6rem;
+  }
 }
 
 .h2 {
