@@ -23,23 +23,8 @@
 }
 
 .h2 {
-  font-size: 6rem;
+  font-size: 3.5rem;
   line-height: 1.15;
-
-  @include media('<tablet') {
-    font-size: 4.5rem;
-    line-height: 1.125;
-  }
-
-  @include media('<landscape') {
-    font-size: 4rem;
-    line-height: 1.125;
-  }
-
-  @include media('<phone') {
-    font-size: 3.5rem;
-    line-height: 1.125;
-  }
 }
 
 .h3 {
@@ -53,22 +38,12 @@
 }
 
 .h4 {
-  font-size: 2rem;
+  font-size: 1.1rem;
+  line-height: 1;
   font-weight: 500;
   font-style: normal;
-  line-height: 0.75;
   letter-spacing: -0.012em;
   text-transform: uppercase;
-
-  @include media('<desktop') {
-    font-size: 1.6rem;
-    line-height: 0.7;
-  }
-
-  @include media('<tablet') {
-    font-size: 1.1rem;
-    line-height: 1;
-  }
 }
 
 .italic {
