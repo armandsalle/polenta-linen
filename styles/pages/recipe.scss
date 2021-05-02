@@ -1,0 +1,275 @@
+.recipe {
+  &__slider {
+    &__image {
+      width: 100%;
+      height: 50rem;
+
+      @include media('>tablet') {
+        width: 37.6rem;
+        height: 50rem;
+      }
+
+      @include media('>desktop') {
+        width: 46.2rem;
+        height: 61.6rem;
+      }
+
+      @include media('>desktop-xl') {
+        width: 58rem;
+        height: 77.4rem;
+      }
+    }
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 50rem;
+    margin: 0;
+
+    @include media('>tablet') {
+      width: 37.6rem;
+      height: 50rem;
+    }
+
+    @include media('>desktop') {
+      width: 46.2rem;
+      height: 61.6rem;
+    }
+
+    @include media('>desktop-xl') {
+      width: 58rem;
+      height: 77.4rem;
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding-bottom: 6rem;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 90%;
+      height: 1px;
+      background-color: var(--color-black);
+      transform: translateX(-50%);
+
+      @include media('>tablet') {
+        display: none;
+      }
+    }
+
+    @include media('>tablet') {
+      max-width: 83.6rem;
+      margin: 0 auto;
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include media('>desktop') {
+      padding-top: 14rem;
+      padding-bottom: 14rem;
+      max-width: 110.7rem;
+    }
+
+    @include media('>desktop-xl') {
+      padding-top: 10.4rem;
+      padding-bottom: 12rem;
+      max-width: 135.2rem;
+    }
+  }
+
+  &__title-wrapper {
+    padding: 4.5rem 2rem 0 2rem;
+    max-width: 68rem;
+    margin: 0 auto;
+
+    @include media('>tablet') {
+      max-width: 40rem;
+      padding: 0;
+      margin-left: 0;
+    }
+
+    @include media('>desktop') {
+      max-width: 54.5rem;
+    }
+
+    @include media('>desktop-xl') {
+      max-width: 60.8rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    line-height: 1.35;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-top: 1rem;
+
+    @include media('>tablet') {
+      margin-top: 2rem;
+    }
+
+    @include media('>desktop') {
+      font-size: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    @include media('>desktop-xl') {
+      margin-top: 2.7rem;
+    }
+  }
+
+  &__content {
+    max-width: 68rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+
+    & h3 {
+      sup {
+        font-size: initial;
+        vertical-align: super;
+
+        @include media('>desktop') {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    @include media('>tablet') {
+      position: relative;
+      display: flex;
+      max-width: 89.4rem;
+      margin-bottom: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: var(--color-black);
+        transform: translateX(-50%);
+      }
+    }
+
+    @include media('>desktop') {
+      max-width: 131rem;
+    }
+
+    @include media('>desktop-xl') {
+      max-width: 179rem;
+    }
+  }
+
+  &__right {
+    &>article:last-child:after {
+      display: none;
+    }
+  }
+
+  &__ingredients,
+  &__informations,
+  &__plating,
+  &__note {
+    padding: 6rem 2rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 90%;
+      height: 1px;
+      background-color: var(--color-black);
+      transform: translateX(-50%);
+    }
+  }
+
+  &__informations,
+  &__plating,
+  &__note {
+    @include media('>tablet') {
+      padding: 6rem 2rem 6rem 6.5rem;
+    }
+
+    @include media('>desktop') {
+      padding: 12rem 7rem 11rem 11rem;
+    }
+
+    @include media('>desktop-xl') {
+      padding: 12rem 14.4rem;
+    }
+  }
+
+  &__ingredients {
+    @include media('>tablet') {
+      flex: 0 0 auto;
+      max-width: 30.5rem;
+      padding: 6rem 5.8rem 0 2rem;
+
+      &::after {
+        top: 0;
+        right: 0;
+        left: unset;
+        height: 100%;
+        width: 1px;
+        transform: none;
+      }
+    }
+
+    @include media('>desktop') {
+      max-width: 51.6rem;
+      padding: 12rem 10.7rem 0 7rem;
+    }
+
+    @include media('>desktop-xl') {
+      max-width: 59.7rem;
+      padding: 12rem 12.7rem 0 6.2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-top: 4rem;
+
+    @include media('>desktop') {
+      margin-top: 9rem;
+      font-size: 1.9rem;
+    }
+
+    @include media('>desktop-xl') {
+      margin-top: 9.7rem;
+    }
+
+    ul {
+      list-style: disc;
+    }
+
+    ol {
+      list-style: decimal;
+
+      li p {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    li {
+      margin-left: 2rem;
+    }
+
+    b {
+      font-weight: bold;
+    }
+  }
+}
