@@ -1,0 +1,69 @@
+.home {
+  &__header {
+    position: relative;
+    width: 100%;
+    height: 66.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 5.4rem 3.9rem 5.4rem;
+
+    @include media('>tablet') {
+      padding: 0 17.4rem 18.9rem 17.4rem;
+      height: 126rem;
+    }
+
+    @include media('>desktop') {
+      padding: 0 19.3rem 11.3rem 19.3rem;
+      height: 101.9rem;
+      justify-content: flex-start;
+    }
+
+    @include media('>desktop-xl') {
+      padding: 0 21.6rem 20rem 21.6rem;
+      height: 108.2rem;
+    }
+
+    & .h1 {
+      max-width: 67.7rem;
+
+      @include media('>desktop') {
+        max-width: 72.4rem;
+      }
+    }
+
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px var(--color-black) solid;
+
+      &__img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__featured {
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 36.6rem;
+
+    @include media('>tablet') {
+      max-width: 85.1rem;
+    }
+
+    @include media('>desktop') {
+      max-width: 105.4rem;
+    }
+
+    @include media('>desktop-xl') {
+      max-width: 148.9rem;
+    }
+  }
+}

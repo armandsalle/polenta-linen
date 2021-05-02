@@ -1,0 +1,128 @@
+.featured-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 9rem;
+  padding-bottom: 9rem;
+  width: 100%;
+  text-decoration: none;
+  color: var(--color-black);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-black);
+  }
+
+  &:last-of-type::after {
+    display: none;
+  }
+
+  @include media('>tablet') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include media('>desktop') {
+    margin-top: 14rem;
+    padding-bottom: 14rem;
+  }
+
+  @include media('>desktop-xl') {
+    margin-top: 9rem;
+    padding-bottom: 9rem;
+    justify-content: flex-start;
+
+    &:nth-child(even) {
+      .featured-page__thumbnail {
+        margin-left: 21.7rem;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: 37.3rem;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    flex: 0 0 auto;
+
+    @include media('>tablet') {
+      width: 43.5rem;
+      height: 48.8rem;
+      margin-bottom: 0;
+    }
+
+    @include media('>desktop') {
+      width: 46.3rem;
+      height: 53rem;
+    }
+
+    @include media('>desktop-xl') {
+      width: 68.6rem;
+      height: 77rem;
+      margin-right: 21.7rem;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    @include media('>tablet') {
+      width: 33.6rem;
+    }
+
+    @include media('>desktop') {
+      width: 46.3rem;
+    }
+
+    & .h2 {
+      font-size: 4rem;
+
+      @include media('>tablet') {
+        font-size: 4.5rem;
+      }
+
+      @include media('>desktop') {
+        font-size: 6rem;
+      }
+    }
+
+    & .subtitle {
+      font-size: 1.5rem;
+      line-height: 1.35;
+      letter-spacing: 0.12em;
+      margin-top: 1rem;
+      text-decoration: underline;
+      font-style: italic;
+      text-transform: uppercase;
+
+      @include media('>tablet') {
+        font-size: 1.7rem;
+      }
+
+      @include media('>desktop') {
+        font-size: 2.5rem;
+        margin-top: 2.4rem;
+      }
+
+      @include media('>desktop-xl') {
+        margin-top: 3.6rem;
+      }
+    }
+  }
+}
