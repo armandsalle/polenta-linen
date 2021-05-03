@@ -8,7 +8,7 @@ type ButtonProps = {
 const Button = ({ title, uid }: ButtonProps): JSX.Element => {
   return (
     <Link href={`/${uid}`}>
-      <a className="recipe__btn">{title}</a>
+      <a className="recipe__btn btn">{title}</a>
     </Link>
   )
 }
