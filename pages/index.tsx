@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       home,
       SEO: home.seo,
+      isHeaderScrollable: false,
     },
   }
 }
