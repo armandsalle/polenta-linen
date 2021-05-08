@@ -1,11 +1,8 @@
-.featured-page {
-  display: flex;
-  flex-direction: column;
-  margin-top: 9rem;
-  padding-bottom: 9rem;
+.featured-page-wrapper {
+  padding: 0 2rem;
+  margin: 9rem auto 0 auto;
   width: 100%;
-  text-decoration: none;
-  color: var(--color-black);
+  padding-bottom: 9rem;
   position: relative;
 
   &::after {
@@ -23,16 +20,6 @@
     display: none;
   }
 
-  @include media('>tablet') {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-  }
-
   @include media('>desktop') {
     margin-top: 14rem;
     padding-bottom: 14rem;
@@ -41,7 +28,37 @@
   @include media('>desktop-xl') {
     margin-top: 9rem;
     padding-bottom: 9rem;
+  }
+}
+
+.featured-page {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 36.6rem;
+  text-decoration: none;
+  color: var(--color-black);
+  position: relative;
+
+  @include media('>tablet') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 85.1rem;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include media('>desktop') {
+    max-width: 105.4rem;
+  }
+
+  @include media('>desktop-xl') {
     justify-content: flex-start;
+    max-width: 148.9rem;
 
     &:nth-child(even) {
       .featured-page__thumbnail {

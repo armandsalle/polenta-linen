@@ -11,23 +11,25 @@ const FeaturedPage = ({
   description,
 }: Item): JSX.Element => {
   return (
-    <Link href={`/${page.uid}`}>
-      <a className="featured-page">
-        <div className="featured-page__thumbnail">
-          <ResponsiveImage
-            src={thumbnail.url}
-            alt={thumbnail.title}
-            className="featured-page__thumbnail__img"
-          />
-        </div>
-        <div className="featured-page__text">
-          <Title as="h2" isSplit={true}>
-            {title}
-          </Title>
-          <p className="subtitle">{description}</p>
-        </div>
-      </a>
-    </Link>
+    <div className="featured-page-wrapper">
+      <Link href={`/${page.uid}`}>
+        <a className="featured-page">
+          <div className="featured-page__thumbnail">
+            <ResponsiveImage
+              src={thumbnail.url}
+              alt={thumbnail.title}
+              className="featured-page__thumbnail__img"
+            />
+          </div>
+          <div className="featured-page__text">
+            <Title as="h2" isSplit={true}>
+              {title}
+            </Title>
+            <p className="subtitle">{description}</p>
+          </div>
+        </a>
+      </Link>
+    </div>
   )
 }
 
