@@ -9,6 +9,14 @@
   position: relative;
   overflow: hidden;
 
+  &.active {
+    &::before {
+      display: none;
+    }
+
+    background-color: var(--color-btn-hover);
+  }
+
   @include media('>tablet') {
     font-size: 1.2rem;
     margin-right: 1rem;
@@ -38,7 +46,11 @@
 }
 
 @media (hover: hover) {
-  .btn:hover::before {
+  .recipe__btn:hover::before {
     transform: translateY(0);
+  }
+
+  .recipe__btn.active:hover::before {
+    transform: none;
   }
 }

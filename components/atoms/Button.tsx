@@ -1,4 +1,6 @@
+import classNames from 'classnames'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 type ButtonProps = {
   title: string
@@ -6,9 +8,18 @@ type ButtonProps = {
 }
 
 const Button = ({ title, uid }: ButtonProps): JSX.Element => {
+  const router = useRouter()
+
   return (
     <Link href={`/${uid}`}>
-      <a className="recipe__btn btn">{title}</a>
+      <a
+        className={classNames(
+          'recipe__btn',
+          router.asPath === `/${uid}` && 'active'
+        )}
+      >
+        {title}
+      </a>
     </Link>
   )
 }
