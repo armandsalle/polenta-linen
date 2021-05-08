@@ -98,7 +98,37 @@
 
     &__img {
       width: 100%;
-      height: 100%;
+      height: 0;
+      padding-bottom: 100%;
+      overflow: hidden;
+
+      &>div {
+        transition: transform 0.4s ease-out;
+        position: relative;
+
+        @media (hover: hover) {
+          &:hover {
+            transform: scale(1.05);
+          }
+
+          &:hover::after {
+            opacity: 1;
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          background-color: rgba(34, 34, 34, 0.329);
+          opacity: 0;
+          transition: opacity .3s ease-out;
+        }
+      }
     }
   }
 
