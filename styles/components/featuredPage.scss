@@ -20,6 +20,14 @@
     display: none;
   }
 
+  @include media('>tablet') {
+    &:nth-child(even) {
+      & .featured-page {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
   @include media('>desktop') {
     margin-top: 14rem;
     padding-bottom: 14rem;
@@ -28,6 +36,13 @@
   @include media('>desktop-xl') {
     margin-top: 9rem;
     padding-bottom: 9rem;
+
+    &:nth-child(even) {
+      .featured-page__thumbnail {
+        margin-left: 21.7rem;
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -46,10 +61,6 @@
     justify-content: space-between;
     align-items: center;
     max-width: 85.1rem;
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-    }
   }
 
   @include media('>desktop') {
@@ -59,13 +70,6 @@
   @include media('>desktop-xl') {
     justify-content: flex-start;
     max-width: 148.9rem;
-
-    &:nth-child(even) {
-      .featured-page__thumbnail {
-        margin-left: 21.7rem;
-        margin-right: 0;
-      }
-    }
   }
 
   &__thumbnail {
