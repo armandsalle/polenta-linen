@@ -1,14 +1,19 @@
 import Burger from '@/components/atoms/nav/Burger'
 import SearchIcon from '@/components/atoms/search/SearchIcon'
 import PolentaIcon from '@/components/atoms/polenta/PolentaIcon'
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useContext } from 'react'
 import classNames from 'classnames'
+import { NavigationContext } from '@/contexts/animationContext'
+import { useRouter } from 'next/router'
 
 type HeaderProps = {
   isHeaderScrollable: boolean
 }
 
 const Header = ({ isHeaderScrollable }: HeaderProps): JSX.Element => {
+  const router = useRouter()
+  const { isUserNavigated } = useContext(NavigationContext)
+
   const [navbar, setNavbar] = useState(false)
 
   const changeBackground = useCallback(() => {
@@ -32,12 +37,16 @@ const Header = ({ isHeaderScrollable }: HeaderProps): JSX.Element => {
       className={classNames(
         'header',
         isHeaderScrollable && navbar && 'header__scroll',
-        !isHeaderScrollable && 'header__background'
+        !isHeaderScrollable && 'header__background',
+        isUserNavigated && 'ppppp'
       )}
     >
-      <Burger />
+      {!isUserNavigated && <Burger />}
+      {isUserNavigated && (
+        <button onClick={() => router.back()}>go back</button>
+      )}
       <PolentaIcon />
-      <SearchIcon />
+      {!isUserNavigated && <SearchIcon />}
     </header>
   )
 }

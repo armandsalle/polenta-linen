@@ -18,6 +18,7 @@
       "@/lib/*": ["lib/*"],
       "@/utils/*": ["utils/*"],
       "@/components/*": ["components/*"],
+      "@/contexts/*": ["contexts/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"]
     }

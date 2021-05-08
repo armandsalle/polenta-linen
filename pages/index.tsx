@@ -5,12 +5,20 @@ import Title from '@/components/atoms/Title'
 import { client } from '@/lib/client'
 import ResponsiveImage from '@/components/atoms/ResponsiveImage'
 import FeaturedPage from '@/components/molecules/FeaturedPage'
+import { useContext, useEffect } from 'react'
+import { NavigationContext } from '@/contexts/animationContext'
 
 type HomeProps = {
   home: HomeType
 }
 
 const Home = ({ home }: HomeProps): JSX.Element => {
+  const { setUserNavigated } = useContext(NavigationContext)
+
+  useEffect(() => {
+    setUserNavigated(false)
+  }, [])
+
   return (
     <section className="container home">
       <div className="home__header">

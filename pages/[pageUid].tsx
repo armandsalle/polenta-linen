@@ -7,6 +7,8 @@ import Title from '@/components/atoms/Title'
 import RecipesNavigation from '@/components/molecules/RecipesNavigation'
 import ResponsiveImage from '@/components/atoms/ResponsiveImage'
 import { Item } from '@/lib/queries/pages/types'
+import { useCallback, useContext, useEffect } from 'react'
+import { NavigationContext } from '@/contexts/animationContext'
 
 type PageProps = {
   page: PageType
@@ -15,6 +17,17 @@ type PageProps = {
 
 const Page = ({ page, pages }: PageProps): JSX.Element => {
   const filteredPages = pages.filter((e) => e.uid !== 'all')
+
+  const { setUserNavigated } = useContext(NavigationContext)
+
+  useEffect(() => {
+    setUserNavigated(false)
+  }, [])
+
+  const handleRecipeCLick = useCallback(() => {
+    setUserNavigated(true)
+  }, [])
+
   return (
     <section>
       <div className="recipe-preview__header">
@@ -27,7 +40,7 @@ const Page = ({ page, pages }: PageProps): JSX.Element => {
         {page.recipesCollection.items.map((el, i) => {
           return (
             <Link href={`/recipe/${el.uid}`} key={i}>
-              <a className="recipe-preview__link">
+              <a className="recipe-preview__link" onClick={handleRecipeCLick}>
                 <ResponsiveImage
                   className="recipe-preview__image"
                   src={el.thumbnail.url}

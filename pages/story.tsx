@@ -5,12 +5,20 @@ import { client } from '@/lib/client'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import ResponsiveImage from '@/components/atoms/ResponsiveImage'
 import Title from '@/components/atoms/Title'
+import { useContext, useEffect } from 'react'
+import { NavigationContext } from '@/contexts/animationContext'
 
 type StoryProps = {
   story: StoryType
 }
 
 const Story = ({ story }: StoryProps): JSX.Element => {
+  const { setUserNavigated } = useContext(NavigationContext)
+
+  useEffect(() => {
+    setUserNavigated(false)
+  }, [])
+
   return (
     <section className="container story">
       <div className="story__hero">
