@@ -7,9 +7,14 @@ import Head from 'next/head'
 type LayoutProps = {
   children: React.ReactNode
   SEO: SEOContent
+  isHeaderScrollable?: boolean
 }
 
-const Layout = ({ children, SEO }: LayoutProps): JSX.Element => {
+const Layout = ({
+  children,
+  SEO,
+  isHeaderScrollable = true,
+}: LayoutProps): JSX.Element => {
   return (
     <>
       {SEO && (
@@ -52,7 +57,7 @@ const Layout = ({ children, SEO }: LayoutProps): JSX.Element => {
       )}
 
       <main>
-        <Header />
+        <Header isHeaderScrollable={isHeaderScrollable} />
         {children}
         <Footer />
       </main>
