@@ -37,8 +37,7 @@ const Header = ({ isHeaderScrollable }: HeaderProps): JSX.Element => {
       className={classNames(
         'header',
         isHeaderScrollable && navbar && 'header__scroll',
-        !isHeaderScrollable && 'header__background',
-        isUserNavigated && 'ppppp'
+        !isHeaderScrollable && 'header__background'
       )}
     >
       {!isUserNavigated && <Burger />}
