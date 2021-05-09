@@ -34,6 +34,7 @@ const SearchBar = ({
     (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
 
+      inputRef.current.blur()
       handleSearchSubmit()
     },
     [handleSearchSubmit]
