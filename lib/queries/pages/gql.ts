@@ -5,6 +5,7 @@ export const pagesQuery = gql`
     heritageCollection {
       items {
         uid
+        order
         title
         sys {
           id

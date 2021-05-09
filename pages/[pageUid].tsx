@@ -17,6 +17,7 @@ type PageProps = {
 
 const Page = ({ page, pages }: PageProps): JSX.Element => {
   const filteredPages = pages.filter((e) => e.uid !== 'all')
+  const orderedPages = filteredPages.sort((a, b) => a.order - b.order)
 
   const { setUserNavigated } = useContext(NavigationContext)
 
@@ -34,7 +35,7 @@ const Page = ({ page, pages }: PageProps): JSX.Element => {
         <Title isSplit={true} as="h1">
           all recipes
         </Title>
-        <RecipesNavigation pages={filteredPages} />
+        <RecipesNavigation pages={orderedPages} />
       </div>
       <div className="container recipe-preview">
         {page.recipesCollection.items.map((el, i) => {

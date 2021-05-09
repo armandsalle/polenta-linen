@@ -15,5 +15,6 @@ export interface HeritageCollection {
 export interface Item {
   uid: string
   title: string
+  order: number
   sys: Sys
 }
