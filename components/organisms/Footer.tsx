@@ -3,30 +3,30 @@ import Link from 'next/link'
 const Footer = (): JSX.Element => {
   return (
     <footer className="footer">
-      <ul className="footer__links">
-        <li>
+      <div className="footer__links">
+        <div>
           <Link href="/">
             <a className="footer__link footer__link__effect">HOME</a>
           </Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <Link href="/all">
             <a className="footer__link footer__link__effect">ALL RECIPES</a>
           </Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <Link href="/heritage">
             <a className="footer__link footer__link__effect">
               HERITAGE RECIPES
             </a>
           </Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <Link href="/story">
             <a className="footer__link footer__link__effect">MY STORY</a>
           </Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </footer>
   )
 }
