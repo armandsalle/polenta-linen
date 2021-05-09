@@ -19,6 +19,7 @@
       "@/utils/*": ["utils/*"],
       "@/components/*": ["components/*"],
       "@/contexts/*": ["contexts/*"],
+      "@/animations/*": ["animations/*"],
       "@/pages/*": ["pages/*"],
       "@/styles/*": ["styles/*"]
     }
