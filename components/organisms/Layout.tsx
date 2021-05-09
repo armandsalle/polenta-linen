@@ -20,8 +20,8 @@ const Layout = ({
     <>
       {SEO && (
         <Head>
+          <link rel="preload" as="font" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link rel="preload" as="font" />
           <title>{SEO.title}</title>
           <meta name="description" content={SEO.description} />
 
