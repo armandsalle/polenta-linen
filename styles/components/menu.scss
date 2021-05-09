@@ -7,6 +7,10 @@
   height: 100%;
   z-index: 99;
 
+  & .header {
+    border-bottom: none;
+  }
+
   &__overlay {
     position: absolute;
     top: 0;

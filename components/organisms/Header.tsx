@@ -64,9 +64,7 @@ const Header = ({
       )}
     >
       {!isUserNavigated && !isOpen && <Burger onClick={handleBurgerOpen} />}
-      {isUserNavigated && (
-        <button onClick={() => router.back()}>go back</button>
-      )}
+      {isUserNavigated && <Close onClick={() => router.back()}>Close</Close>}
       {isOpen && <Close onClick={handleBurgerClose}>Close</Close>}
       <PolentaIcon />
       {!isUserNavigated && !isOpen && <SearchIcon />}
