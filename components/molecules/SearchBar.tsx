@@ -26,18 +26,18 @@ const SearchBar = ({
   const router = useRouter()
   const [input, setInput] = useState<string>('')
 
+  const handleSearchSubmit = useCallback(() => {
+    router.push(`/search?q=${encodeURIComponent(input.toLowerCase())}`)
+  }, [input])
+
   const handleSearchFormSubmit = useCallback(
     (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault()
 
-      router.push(`/search?q=${encodeURIComponent(input)}`)
+      handleSearchSubmit()
     },
-    [input]
+    [handleSearchSubmit]
   )
-
-  const handleSearchSubmit = useCallback(() => {
-    router.push(`/search?q=${encodeURIComponent(input)}`)
-  }, [input])
 
   useEffect(() => {
     if (searchMode) {
