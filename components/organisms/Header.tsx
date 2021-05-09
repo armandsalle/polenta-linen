@@ -1,4 +1,5 @@
 import Burger from '@/components/atoms/nav/Burger'
+import Close from '@/components/atoms/nav/Close'
 import SearchIcon from '@/components/atoms/search/SearchIcon'
 import PolentaIcon from '@/components/atoms/polenta/PolentaIcon'
 import { useEffect, useState, useCallback, useContext } from 'react'
@@ -8,9 +9,13 @@ import { useRouter } from 'next/router'
 
 type HeaderProps = {
   isHeaderScrollable: boolean
+  isOpen?: boolean
 }
 
-const Header = ({ isHeaderScrollable }: HeaderProps): JSX.Element => {
+const Header = ({
+  isHeaderScrollable,
+  isOpen = false,
+}: HeaderProps): JSX.Element => {
   const router = useRouter()
   const { isUserNavigated } = useContext(NavigationContext)
 
@@ -20,32 +25,51 @@ const Header = ({ isHeaderScrollable }: HeaderProps): JSX.Element => {
     window.scrollY >= 180 ? setNavbar(true) : setNavbar(false)
   }, [setNavbar])
 
+  const handleBurgerOpen = useCallback(async () => {
+    document.body.style.overflowY = 'hidden'
+
+    if (window) {
+      const menuTimeline = await import('animations/menu')
+      menuTimeline.menuTimelineShow.play()
+    }
+  }, [])
+
+  const handleBurgerClose = useCallback(async () => {
+    document.body.style.overflowY = 'auto'
+
+    if (window) {
+      const menuTimeline = await import('animations/menu')
+      menuTimeline.menuTimelineHide.play()
+    }
+  }, [])
+
   useEffect(() => {
-    if (isHeaderScrollable) {
+    if (isHeaderScrollable || isOpen) {
       window.addEventListener('scroll', changeBackground)
     }
 
     return () => {
-      if (isHeaderScrollable) {
+      if (isHeaderScrollable || isOpen) {
         window.removeEventListener('scroll', changeBackground)
       }
     }
-  }, [isHeaderScrollable])
+  }, [isHeaderScrollable, isOpen])
 
   return (
     <header
       className={classNames(
         'header',
-        isHeaderScrollable && navbar && 'header__scroll',
+        isHeaderScrollable && navbar && !isOpen && 'header__scroll',
         !isHeaderScrollable && 'header__background'
       )}
     >
-      {!isUserNavigated && <Burger />}
+      {!isUserNavigated && !isOpen && <Burger onClick={handleBurgerOpen} />}
       {isUserNavigated && (
         <button onClick={() => router.back()}>go back</button>
       )}
+      {isOpen && <Close onClick={handleBurgerClose}>Close</Close>}
       <PolentaIcon />
-      {!isUserNavigated && <SearchIcon />}
+      {!isUserNavigated && !isOpen && <SearchIcon />}
     </header>
   )
 }

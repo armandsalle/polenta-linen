@@ -2,6 +2,7 @@ import type { SEOContent } from '@/lib/shared/SEO/types'
 
 import Header from '@/components/organisms/Header'
 import Footer from '@/components/organisms/Footer'
+import Menu from '@/components/molecules/Menu'
 import Head from 'next/head'
 
 type LayoutProps = {
@@ -60,6 +61,7 @@ const Layout = ({
         <Header isHeaderScrollable={isHeaderScrollable} />
         {children}
         <Footer />
+        <Menu />
       </main>
     </>
   )
