@@ -11,7 +11,7 @@ const Button = ({ title, uid }: ButtonProps): JSX.Element => {
   const router = useRouter()
 
   return (
-    <Link href={`/${uid}`}>
+    <Link href={`/${uid}`} scroll={true}>
       <a
         className={classNames(
           'recipe__btn',
