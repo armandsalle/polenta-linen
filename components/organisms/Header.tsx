@@ -2,10 +2,11 @@ import Burger from '@/components/atoms/nav/Burger'
 import Close from '@/components/atoms/nav/Close'
 import SearchIcon from '@/components/atoms/search/SearchIcon'
 import PolentaIcon from '@/components/atoms/polenta/PolentaIcon'
-import { useEffect, useState, useCallback, useContext } from 'react'
+import SearchBar from '@/components/molecules/SearchBar'
 import classNames from 'classnames'
 import { NavigationContext } from '@/contexts/animationContext'
 import { useRouter } from 'next/router'
+import { useEffect, useState, useCallback, useContext } from 'react'
 
 type HeaderProps = {
   isHeaderScrollable: boolean
@@ -19,7 +20,8 @@ const Header = ({
   const router = useRouter()
   const { isUserNavigated } = useContext(NavigationContext)
 
-  const [navbar, setNavbar] = useState(false)
+  const [navbar, setNavbar] = useState<boolean>(false)
+  const [searchMode, setSearchMode] = useState<boolean>(false)
 
   const changeBackground = useCallback(() => {
     window.scrollY >= 180 ? setNavbar(true) : setNavbar(false)
@@ -43,6 +45,10 @@ const Header = ({
     }
   }, [])
 
+  const handleSearchIconCLick = useCallback(() => {
+    setSearchMode(true)
+  }, [])
+
   useEffect(() => {
     if (isHeaderScrollable || isOpen) {
       window.addEventListener('scroll', changeBackground)
@@ -56,19 +62,30 @@ const Header = ({
   }, [isHeaderScrollable, isOpen])
 
   return (
-    <header
-      className={classNames(
-        'header',
-        isHeaderScrollable && navbar && !isOpen && 'header__scroll',
-        !isHeaderScrollable && 'header__background'
+    <>
+      {!searchMode && (
+        <header
+          className={classNames(
+            'header',
+            isHeaderScrollable && navbar && !isOpen && 'header__scroll',
+            !isHeaderScrollable && 'header__background'
+          )}
+        >
+          {!isUserNavigated && !isOpen && <Burger onClick={handleBurgerOpen} />}
+          {isUserNavigated && (
+            <Close onClick={() => router.back()}>Close</Close>
+          )}
+          {isOpen && <Close onClick={handleBurgerClose}>Close</Close>}
+          <PolentaIcon />
+          {!isUserNavigated && !isOpen && (
+            <SearchIcon onClick={handleSearchIconCLick} />
+          )}
+        </header>
       )}
-    >
-      {!isUserNavigated && !isOpen && <Burger onClick={handleBurgerOpen} />}
-      {isUserNavigated && <Close onClick={() => router.back()}>Close</Close>}
-      {isOpen && <Close onClick={handleBurgerClose}>Close</Close>}
-      <PolentaIcon />
-      {!isUserNavigated && !isOpen && <SearchIcon />}
-    </header>
+      {searchMode && (
+        <SearchBar searchMode={searchMode} setSearchMode={setSearchMode} />
+      )}
+    </>
   )
 }
 

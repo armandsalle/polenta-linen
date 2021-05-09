@@ -46,6 +46,11 @@
       @include media('>desktop') {
         padding-bottom: 7rem;
       }
+
+      & .h1 {
+        width: 90%;
+        text-align: center;
+      }
     }
 
     @include media('>phone') {
