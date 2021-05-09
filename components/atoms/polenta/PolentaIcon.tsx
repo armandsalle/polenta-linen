@@ -3,7 +3,7 @@ import Link from 'next/link'
 const PolentaIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
   return (
     <Link href="/">
-      <a>
+      <a className="logo-wrapper">
         <svg
           className="logo"
           fill="none"
