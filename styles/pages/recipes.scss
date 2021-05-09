@@ -1,4 +1,5 @@
-.recipe-preview {
+.recipe-preview,
+.search {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 3.5rem;
@@ -38,6 +39,14 @@
     align-items: center;
     padding-top: 23.5rem;
     border-bottom: 0.1rem solid var(--color-black);
+
+    &.--search {
+      padding-bottom: 6rem;
+
+      @include media('>desktop') {
+        padding-bottom: 7rem;
+      }
+    }
 
     @include media('>phone') {
       padding-top: 28.5rem;
@@ -119,7 +128,9 @@
 }
 
 @media (hover: hover) {
-  .recipe-preview__link:hover .recipe-preview__image>div {
+
+  .recipe-preview__link:hover .recipe-preview__image>div,
+  .search__link:hover .search__image>div {
     transform: scale(1.05);
 
     &::after {

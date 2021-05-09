@@ -12,7 +12,7 @@ export const menuTimelineShow = anime
     },
   })
   .add({
-    targets: '.burger, .search',
+    targets: '.burger, .search-icon',
     opacity: [1, 0],
     duration: 200,
   })
@@ -59,7 +59,7 @@ export const menuTimelineHide = anime
   })
   .add(
     {
-      targets: '.burger, .search',
+      targets: '.burger, .search-icon',
       opacity: [0, 1],
       duration: 200,
     },

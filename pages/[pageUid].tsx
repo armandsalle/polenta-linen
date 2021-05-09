@@ -2,10 +2,9 @@ import type { GetStaticPaths, GetStaticProps } from 'next'
 import type { Page as PageType } from '@/lib/queries/page/types'
 
 import { client } from '@/lib/client'
-import Link from 'next/link'
 import Title from '@/components/atoms/Title'
 import RecipesNavigation from '@/components/molecules/RecipesNavigation'
-import ResponsiveImage from '@/components/atoms/ResponsiveImage'
+import RecipePreview from '@/components/molecules/RecipePreview'
 import { Item } from '@/lib/queries/pages/types'
 import { useCallback, useContext, useEffect } from 'react'
 import { NavigationContext } from '@/contexts/animationContext'
@@ -39,18 +38,7 @@ const Page = ({ page, pages }: PageProps): JSX.Element => {
       </div>
       <div className="container recipe-preview">
         {page.recipesCollection.items.map((el, i) => {
-          return (
-            <Link href={`/recipe/${el.uid}`} key={i}>
-              <a className="recipe-preview__link" onClick={handleRecipeCLick}>
-                <ResponsiveImage
-                  className="recipe-preview__image"
-                  src={el.thumbnail.url}
-                  alt={el.thumbnail.title}
-                />
-                <p className="recipe-preview__title">{el.title}</p>
-              </a>
-            </Link>
-          )
+          return <RecipePreview el={el} key={i} onClick={handleRecipeCLick} />
         })}
       </div>
     </section>

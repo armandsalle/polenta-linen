@@ -1,3 +1,4 @@
+import type { Photo } from '@/lib/shared/types/photo'
 import type { Sys } from '@/lib/shared/types/Sys'
 
 export interface RecipesData {
@@ -15,4 +16,7 @@ export interface Recipes {
 export interface Item {
   uid: string
   sys: Sys
+  title: string
+  thumbnail: Photo
+  tags: string[]
 }

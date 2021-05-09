@@ -5,6 +5,11 @@ export const recipesQuery = gql`
     recipeCollection {
       items {
         uid
+        tags
+        title
+        thumbnail {
+          url
+        }
         sys {
           id
         }

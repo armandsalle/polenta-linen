@@ -1,7 +1,7 @@
 const SearchIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => {
   return (
     <svg
-      className="search"
+      className="search-icon"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 28 28"
