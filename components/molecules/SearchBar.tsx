@@ -58,6 +58,7 @@ const SearchBar = ({
           type="text"
           ref={inputRef}
           value={input}
+          autoFocus
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type here"
         />
