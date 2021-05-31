@@ -1,6 +1,6 @@
 .footer {
   border-top: 1px solid var(--color-black);
-  padding-left: 3.2rem;
+  padding-left: 2rem;
 
   @include media('>phone') {
     padding-left: 6.5rem;
@@ -26,7 +26,7 @@
   color: var(--color-black);
   text-decoration: none;
   letter-spacing: 0.12em;
-  margin-right: 1.2rem;
+  margin-right: 1.9rem;
   padding: 1.5rem 0;
 
   @include media('>tablet') {
