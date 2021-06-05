@@ -1,9 +1,8 @@
 .footer {
   border-top: 1px solid var(--color-black);
-  padding: 0 2rem;
 
   @include media('>phone') {
-    padding: 0 0 0 6.5rem;
+    padding-left: 6.5rem;
   }
 }
 
