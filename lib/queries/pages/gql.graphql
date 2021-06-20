@@ -1,0 +1,12 @@
+query Heritage {
+  heritageCollection {
+    items {
+      uid
+      order
+      title
+      sys {
+        id
+      }
+    }
+  }
+}

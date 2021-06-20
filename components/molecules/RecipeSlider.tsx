@@ -1,15 +1,14 @@
-import type { Photo } from '@/lib/shared/types/photo'
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 import SwiperCore, { Pagination } from 'swiper/core'
 
 import ResponsiveImage from '@/components/atoms/ResponsiveImage'
+import { SliderFragment } from '@/lib/generated/graphql'
 
 SwiperCore.use([Pagination])
 
 type RecipeSliderType = {
-  images: Photo[]
+  images: SliderFragment['sliderCollection']['items']
 }
 
 const RecipeSlider = ({ images }: RecipeSliderType): JSX.Element => {

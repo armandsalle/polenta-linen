@@ -1,4 +1,3 @@
-import type { Item } from '@/lib/queries/recipes/types'
 import type { GetStaticProps } from 'next'
 
 import { client } from '@/lib/client'
@@ -7,16 +6,19 @@ import { useCallback, useContext, useEffect, useState } from 'react'
 import RecipePreview from '@/components/molecules/RecipePreview'
 import Title from '@/components/atoms/Title'
 import { NavigationContext } from '@/contexts/animationContext'
+import { AllRecipesQuery } from '@/lib/generated/graphql'
+
+type A = AllRecipesQuery['recipeCollection']['items']
 
 type SearchPageProps = {
-  items: Item[]
+  items: A
 }
 
 const SearchPage = ({ items }: SearchPageProps): JSX.Element => {
   const { setUserNavigated } = useContext(NavigationContext)
   const router = useRouter()
 
-  const [results, setResults] = useState<Item[]>([])
+  const [results, setResults] = useState<A>([])
 
   const handleRecipeCLick = useCallback(() => {
     setUserNavigated(true)
@@ -48,7 +50,7 @@ const SearchPage = ({ items }: SearchPageProps): JSX.Element => {
       return !!p.length || !!u.length
     })
 
-    return results as Item[]
+    return results as A
   }, [items, router])
 
   useEffect(() => {
@@ -85,7 +87,7 @@ const SearchPage = ({ items }: SearchPageProps): JSX.Element => {
 export default SearchPage
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { items } = await client.getAllRecipes()
+  const items = await client.getAllRecipes()
   const { home } = await client.getHome()
 
   return {

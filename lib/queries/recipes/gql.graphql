@@ -1,0 +1,16 @@
+query AllRecipes {
+  recipeCollection {
+    items {
+      uid
+      tags
+      title
+      thumbnail {
+        title
+        url
+      }
+      sys {
+        id
+      }
+    }
+  }
+}

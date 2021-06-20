@@ -1,8 +1,8 @@
-import { Item } from '@/lib/queries/pages/types'
 import Button from '@/components/atoms/Button'
+import { HeritageQuery } from '@/lib/generated/graphql'
 
 type PagesProps = {
-  pages: Item[]
+  pages: HeritageQuery['heritageCollection']['items']
 }
 
 const RecipesNavigation = ({ pages }: PagesProps): JSX.Element => {

@@ -1,4 +1,4 @@
-import type { SEOContent } from '@/lib/shared/SEO/types'
+import type { Seo } from '@/lib/generated/graphql'
 
 import Header from '@/components/organisms/Header'
 import Footer from '@/components/organisms/Footer'
@@ -7,7 +7,7 @@ import Head from 'next/head'
 
 type LayoutProps = {
   children: React.ReactNode
-  SEO: SEOContent
+  SEO: Seo
   isHeaderScrollable?: boolean
 }
 
@@ -24,7 +24,6 @@ const Layout = ({
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <title>{SEO.title}</title>
           <meta name="description" content={SEO.description} />
-
           <meta property="og:title" content={SEO.title} />
           <meta property="og:description" content={SEO.description} />
           <meta property="og:type" content="website" />

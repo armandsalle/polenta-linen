@@ -1,0 +1,37 @@
+fragment Slider on Recipe {
+  sliderCollection {
+    ... on AssetCollection {
+      items {
+        title
+        url
+      }
+    }
+  }
+}
+
+query Recipe($id: String!) {
+  recipe(id: $id) {
+    title
+    subtitle
+    thumbnail {
+      title
+      url
+    }
+    cooksNote {
+      json
+    }
+    plating {
+      json
+    }
+    preparation {
+      json
+    }
+    ingredients {
+      json
+    }
+    ...Slider
+    seo {
+      ...Seo
+    }
+  }
+}

@@ -1,12 +1,8 @@
-import { seoFragment } from '@/lib/shared/SEO/gql'
-import { gql } from '@apollo/client'
-
-export const homeQuery = gql`
 query Home {
   home(id: "5PKbLvtccQnkKj7rDgcrti") {
     title
     heroImage {
-     title
+      title
       url(transform: { width: 1920 })
     }
     featuredPageCollection {
@@ -22,6 +18,8 @@ query Home {
         }
       }
     }
-    ${seoFragment}
+    seo {
+      ...Seo
+    }
   }
-}`
+}

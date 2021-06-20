@@ -1,0 +1,17 @@
+query Page($id: String!) {
+  heritage(id: $id) {
+    recipesCollection {
+      items {
+        title
+        uid
+        thumbnail {
+          title
+          url
+        }
+      }
+    }
+    seo {
+      ...Seo
+    }
+  }
+}

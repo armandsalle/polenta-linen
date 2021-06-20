@@ -1,17 +1,17 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
-import type { Page as PageType } from '@/lib/queries/page/types'
 
 import { client } from '@/lib/client'
 import Title from '@/components/atoms/Title'
 import RecipesNavigation from '@/components/molecules/RecipesNavigation'
 import RecipePreview from '@/components/molecules/RecipePreview'
-import { Item } from '@/lib/queries/pages/types'
+
 import { useCallback, useContext, useEffect } from 'react'
 import { NavigationContext } from '@/contexts/animationContext'
+import { HeritageQuery, PageQuery } from '@/lib/generated/graphql'
 
 type PageProps = {
-  page: PageType
-  pages: Item[]
+  page: PageQuery['heritage']
+  pages: HeritageQuery['heritageCollection']['items']
 }
 
 const Page = ({ page, pages }: PageProps): JSX.Element => {
