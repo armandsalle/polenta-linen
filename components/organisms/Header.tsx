@@ -11,11 +11,13 @@ import { useEffect, useState, useCallback, useContext } from 'react'
 type HeaderProps = {
   isHeaderScrollable: boolean
   isOpen?: boolean
+  isRecipe?: boolean
 }
 
 const Header = ({
   isHeaderScrollable,
   isOpen = false,
+  isRecipe = false,
 }: HeaderProps): JSX.Element => {
   const router = useRouter()
   const { isUserNavigated } = useContext(NavigationContext)
@@ -68,7 +70,8 @@ const Header = ({
           className={classNames(
             'header',
             isHeaderScrollable && navbar && !isOpen && 'header__scroll',
-            !isHeaderScrollable && 'header__background'
+            !isHeaderScrollable && 'header__background',
+            isUserNavigated && isRecipe && 'header--recipe'
           )}
         >
           {!isUserNavigated && !isOpen && <Burger onClick={handleBurgerOpen} />}

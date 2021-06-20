@@ -45,11 +45,11 @@
   &__header {
     position: relative;
     padding-bottom: 6rem;
-    margin-top: 6rem;
+    padding-top: 6rem;
     width: 100%;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -64,30 +64,29 @@
     }
 
     @include media('>phone') {
-      margin-top: 11rem;
+      padding-top: 11rem;
     }
 
     @include media('>tablet') {
       max-width: 83.6rem;
       margin: 0 auto;
-      padding-top: 23rem;
-      padding-bottom: 12rem;
+      padding-top: 0;
+      padding-bottom: 0;
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between;
+      min-height: 73rem;
+      height: 100vh;
     }
 
     @include media('>desktop') {
-      padding-top: 24.9rem;
-      padding-bottom: 14rem;
       max-width: 110.7rem;
     }
 
     @include media('>desktop-xl') {
-      padding-top: 21.3rem;
-      padding-bottom: 12rem;
       max-width: 135.2rem;
+      min-height: 100rem;
     }
   }
 
@@ -116,7 +115,7 @@
     line-height: 1.35;
     font-style: italic;
     text-transform: uppercase;
-    letter-spacing: .12em;
+    letter-spacing: 0.12em;
     margin-top: 1rem;
 
     @include media('>tablet') {
@@ -156,7 +155,7 @@
       margin-bottom: 0;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 50%;
@@ -177,7 +176,7 @@
   }
 
   &__right {
-    &>article:last-child:after {
+    & > article:last-child:after {
       display: none;
     }
   }
@@ -190,7 +189,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 50%;

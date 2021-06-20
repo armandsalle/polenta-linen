@@ -9,12 +9,14 @@ type LayoutProps = {
   children: React.ReactNode
   SEO: Seo
   isHeaderScrollable?: boolean
+  isRecipe?: boolean
 }
 
 const Layout = ({
   children,
   SEO,
   isHeaderScrollable = true,
+  isRecipe = false,
 }: LayoutProps): JSX.Element => {
   return (
     <>
@@ -53,7 +55,7 @@ const Layout = ({
       )}
 
       <main>
-        <Header isHeaderScrollable={isHeaderScrollable} />
+        <Header isHeaderScrollable={isHeaderScrollable} isRecipe={isRecipe} />
         {children}
         <Footer />
         <Menu />

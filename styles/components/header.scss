@@ -12,6 +12,7 @@
   padding: 0 6.5rem;
   border-bottom: 1px solid var(--color-black);
   z-index: 99;
+  background-color: #f7f4ed;
   transition: background-color 0.2s ease-out;
 
   @include media('<phone') {
@@ -32,6 +33,11 @@
 
 .header__background--search {
   background-color: var(--color-background);
+}
+
+.header--recipe {
+  position: absolute;
+  border: none;
 }
 
 .logo-wrapper {
@@ -153,7 +159,7 @@
 
 .close-icon {
   cursor: pointer;
-  width: 1.7rem;
+  width: 1rem;
   position: absolute;
   top: 50%;
   left: 2rem;
@@ -161,6 +167,6 @@
 
   @include media('>phone') {
     left: 6.5rem;
-    width: 2.1rem;
+    width: 1.8rem;
   }
 }

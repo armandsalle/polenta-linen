@@ -74,6 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
     props: {
       recipe,
       SEO: recipe.seo,
+      isRecipe: true,
     },
   }
 }
