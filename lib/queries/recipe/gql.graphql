@@ -3,7 +3,7 @@ fragment Slider on Recipe {
     ... on AssetCollection {
       items {
         title
-        url
+        url(transform: { quality: 70, width: 400 })
       }
     }
   }
@@ -15,7 +15,7 @@ query Recipe($id: String!) {
     subtitle
     thumbnail {
       title
-      url
+      url(transform: { quality: 70, width: 500 })
     }
     cooksNote {
       json
