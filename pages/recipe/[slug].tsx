@@ -12,7 +12,7 @@ type RecipeProps = {
 
 const Recipe = ({ recipe }: RecipeProps): JSX.Element => {
   return (
-    <section className="container recipe">
+    <main className="container recipe">
       <div className="recipe__header">
         <RecipeSlider images={recipe.sliderCollection.items} />
         <div className="recipe__title-wrapper">
@@ -61,7 +61,7 @@ const Recipe = ({ recipe }: RecipeProps): JSX.Element => {
           )}
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 

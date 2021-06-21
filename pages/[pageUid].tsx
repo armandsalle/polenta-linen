@@ -30,7 +30,7 @@ const Page = ({ page, pages }: PageProps): JSX.Element => {
   }, [])
 
   return (
-    <section>
+    <main>
       <div className="recipe-preview__header">
         <Title isSplit={true} as="h1">
           all recipes
@@ -42,7 +42,7 @@ const Page = ({ page, pages }: PageProps): JSX.Element => {
           return <RecipePreview el={el} key={i} onClick={handleRecipeCLick} />
         })}
       </div>
-    </section>
+    </main>
   )
 }
 

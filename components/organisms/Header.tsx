@@ -24,10 +24,11 @@ const Header = ({
 
   const [navbar, setNavbar] = useState<boolean>(false)
   const [searchMode, setSearchMode] = useState<boolean>(false)
+  const [scrollAmount, setScrollAmount] = useState<number>(30)
 
   const changeBackground = useCallback(() => {
-    window.scrollY >= 180 ? setNavbar(true) : setNavbar(false)
-  }, [setNavbar])
+    window.scrollY >= scrollAmount ? setNavbar(true) : setNavbar(false)
+  }, [setNavbar, scrollAmount])
 
   const handleBurgerOpen = useCallback(async () => {
     document.body.style.overflowY = 'hidden'
@@ -61,7 +62,18 @@ const Header = ({
         window.removeEventListener('scroll', changeBackground)
       }
     }
-  }, [isHeaderScrollable, isOpen])
+  }, [isHeaderScrollable, isOpen, scrollAmount])
+
+  useEffect(() => {
+    const hero = document.querySelector('.home__header')
+    const header = document.querySelector('header')
+    const heroHeight =
+      hero && header
+        ? hero.getBoundingClientRect().height -
+          header.getBoundingClientRect().height
+        : 300
+    setScrollAmount(heroHeight)
+  }, [])
 
   return (
     <>
@@ -70,7 +82,7 @@ const Header = ({
           className={classNames(
             'header',
             isHeaderScrollable && navbar && !isOpen && 'header__scroll',
-            !isHeaderScrollable && 'header__background',
+            isHeaderScrollable && 'header__background',
             isUserNavigated && isRecipe && 'header--recipe'
           )}
         >

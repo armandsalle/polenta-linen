@@ -20,7 +20,7 @@ const Story = ({ story }: StoryProps): JSX.Element => {
   }, [])
 
   return (
-    <section className="container story">
+    <main className="container story">
       <div className="story__hero">
         <ResponsiveImage
           className="story__image"
@@ -37,7 +37,7 @@ const Story = ({ story }: StoryProps): JSX.Element => {
         </div>
         <p className="signature">{story.signature}</p>
       </div>
-    </section>
+    </main>
   )
 }
 

@@ -64,7 +64,7 @@ const SearchPage = ({ items }: SearchPageProps): JSX.Element => {
   }, [])
 
   return (
-    <section>
+    <main>
       <div className="search__header --search">
         <Title isSplit={true} as="h1">
           {results.length > 0 ? `SEARCH results` : `no search results  found`}
@@ -80,7 +80,7 @@ const SearchPage = ({ items }: SearchPageProps): JSX.Element => {
             return <RecipePreview el={el} key={i} onClick={handleRecipeCLick} />
           })}
       </div>
-    </section>
+    </main>
   )
 }
 

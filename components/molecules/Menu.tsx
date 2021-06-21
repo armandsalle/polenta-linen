@@ -15,7 +15,7 @@ const Menu = (): JSX.Element => {
   return (
     <div className="menu">
       <div className="menu__overlay"></div>
-      <Header isHeaderScrollable={true} isOpen={true} />
+      <Header isHeaderScrollable={false} isOpen={true} />
       <div className="menu__links">
         <Link href="/">
           <a className="menu__link" onClick={handleBurgerClose}>
