@@ -70,6 +70,24 @@
   }
 }
 
+.icon-wrapper {
+  position: relative;
+  flex: 0 0 auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: transparent;
+    z-index: 100000;
+    pointer-events: all;
+  }
+}
+
 .burger {
   height: 1rem;
   width: 1rem;

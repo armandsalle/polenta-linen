@@ -92,14 +92,20 @@ const Header = ({
           )}
           ref={headerRef}
         >
-          {!isUserNavigated && !isOpen && <Burger onClick={handleBurgerOpen} />}
+          {!isUserNavigated && !isOpen && (
+            <div className="icon-wrapper" onClick={handleBurgerOpen}>
+              <Burger />
+            </div>
+          )}
           {isUserNavigated && (
             <Close onClick={() => router.back()}>Close</Close>
           )}
           {isOpen && <Close onClick={handleBurgerClose}>Close</Close>}
           <PolentaIcon />
           {!isUserNavigated && !isOpen && (
-            <SearchIcon onClick={handleSearchIconCLick} />
+            <div className="icon-wrapper" onClick={handleSearchIconCLick}>
+              <SearchIcon />
+            </div>
           )}
         </header>
       )}
