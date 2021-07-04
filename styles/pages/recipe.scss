@@ -133,9 +133,10 @@
   }
 
   &__content {
-    max-width: 68rem;
+    padding: 0 2rem;
     margin: 0 auto;
     margin-bottom: 6rem;
+    width: 100%;
 
     & h3 {
       sup {
@@ -151,15 +152,17 @@
     @include media('>tablet') {
       position: relative;
       display: flex;
-      max-width: 89.4rem;
+      // max-width: 89.4rem;
       margin-bottom: 0;
+      padding: 0 6.5rem;
 
       &::after {
         content: '';
         position: absolute;
         top: 0;
         left: 50%;
-        width: 100%;
+        width: calc(100% - 13rem);
+
         height: 1px;
         background-color: var(--color-black);
         transform: translateX(-50%);
@@ -167,11 +170,11 @@
     }
 
     @include media('>desktop') {
-      max-width: 131rem;
+      // max-width: 131rem;
     }
 
     @include media('>desktop-xl') {
-      max-width: 179rem;
+      // max-width: 179rem;
     }
   }
 
@@ -185,8 +188,12 @@
   &__informations,
   &__plating,
   &__note {
-    padding: 6rem 2rem;
+    padding: 6rem 0rem;
     position: relative;
+
+    @include media('>phone') {
+      padding: 6rem 2rem;
+    }
 
     &::after {
       content: '';
@@ -245,15 +252,19 @@
 
   &__text {
     font-size: 1.4rem;
+    line-height: 1.6;
     margin-top: 4rem;
 
+    @include media('>tablet') {
+      line-height: 2.3;
+    }
+
     @include media('>desktop') {
-      margin-top: 9rem;
-      font-size: 1.9rem;
+      margin-top: 5rem;
     }
 
     @include media('>desktop-xl') {
-      margin-top: 9.7rem;
+      margin-top: 7rem;
     }
 
     ul {

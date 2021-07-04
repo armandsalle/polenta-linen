@@ -41,6 +41,7 @@
   @include media('>desktop-xl') {
     margin-top: 9rem;
     padding-bottom: 9rem;
+    min-height: auto;
 
     &:nth-child(even) {
       .featured-page__thumbnail {
@@ -106,6 +107,11 @@
       padding-bottom: 100%;
       overflow: hidden;
 
+      @include media('>tablet') {
+        height: 100%;
+        padding-bottom: 0;
+      }
+
       & > div {
         transition: transform 0.4s ease-out;
         position: relative;
@@ -152,8 +158,8 @@
         font-size: 4.5rem;
       }
 
-      @include media('>desktop') {
-        font-size: 6rem;
+      @include media('>desktop-xl') {
+        font-size: 5rem;
       }
     }
 
