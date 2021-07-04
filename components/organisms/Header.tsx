@@ -6,7 +6,7 @@ import SearchBar from '@/components/molecules/SearchBar'
 import classNames from 'classnames'
 import { NavigationContext } from '@/contexts/animationContext'
 import { useRouter } from 'next/router'
-import { useEffect, useState, useCallback, useContext } from 'react'
+import { useEffect, useState, useCallback, useContext, useRef } from 'react'
 
 type HeaderProps = {
   isHeaderScrollable: boolean
@@ -20,6 +20,7 @@ const Header = ({
   isRecipe = false,
 }: HeaderProps): JSX.Element => {
   const router = useRouter()
+  const headerRef = useRef<null | HTMLElement>(null)
   const { isUserNavigated } = useContext(NavigationContext)
 
   const [navbar, setNavbar] = useState<boolean>(false)
@@ -75,6 +76,10 @@ const Header = ({
     setScrollAmount(heroHeight)
   }, [])
 
+  useEffect(() => {
+    headerRef?.current.classList.remove('header__scroll')
+  }, [headerRef])
+
   return (
     <>
       {!searchMode && (
@@ -85,6 +90,7 @@ const Header = ({
             isHeaderScrollable && 'header__background',
             isUserNavigated && isRecipe && 'header--recipe'
           )}
+          ref={headerRef}
         >
           {!isUserNavigated && !isOpen && <Burger onClick={handleBurgerOpen} />}
           {isUserNavigated && (
