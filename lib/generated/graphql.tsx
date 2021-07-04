@@ -1667,7 +1667,7 @@ export type AllRecipesQuery = (
     { __typename?: 'RecipeCollection' }
     & { items: Array<Maybe<(
       { __typename?: 'Recipe' }
-      & Pick<Recipe, 'uid' | 'tags' | 'title'>
+      & Pick<Recipe, 'uid' | 'tags' | 'title' | 'subtitle'>
       & { thumbnail?: Maybe<(
         { __typename?: 'Asset' }
         & Pick<Asset, 'title' | 'url'>
@@ -1715,7 +1715,7 @@ export const SliderFragmentDoc = gql`
     ... on AssetCollection {
       items {
         title
-        url
+        url(transform: {quality: 70, width: 400})
       }
     }
   }
@@ -1879,7 +1879,7 @@ export const RecipeDocument = gql`
     subtitle
     thumbnail {
       title
-      url
+      url(transform: {quality: 70, width: 500})
     }
     cooksNote {
       json
@@ -1938,11 +1938,12 @@ export const AllRecipesDocument = gql`
       title
       thumbnail {
         title
-        url
+        url(transform: {quality: 50, width: 300})
       }
       sys {
         id
       }
+      subtitle
     }
   }
 }
