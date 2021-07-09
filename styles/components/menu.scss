@@ -79,6 +79,10 @@
       text-transform: uppercase;
 
       @include media('>landscape') {
+        font-size: 4rem;
+      }
+
+      @include media('>tablet') {
         font-size: 4.5rem;
       }
 
