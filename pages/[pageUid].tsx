@@ -1,22 +1,23 @@
 import type { GetStaticPaths, GetStaticProps } from 'next'
-import type { Page as PageType } from '@/lib/queries/page/types'
 
 import { client } from '@/lib/client'
 import Title from '@/components/atoms/Title'
 import RecipesNavigation from '@/components/molecules/RecipesNavigation'
 import RecipePreview from '@/components/molecules/RecipePreview'
-import { Item } from '@/lib/queries/pages/types'
+
 import { useCallback, useContext, useEffect } from 'react'
 import { NavigationContext } from '@/contexts/animationContext'
+import { HeritageQuery, PageQuery } from '@/lib/generated/graphql'
 
 type PageProps = {
-  page: PageType
-  pages: Item[]
+  page: PageQuery['heritage']
+  pages: HeritageQuery['heritageCollection']['items']
 }
 
 const Page = ({ page, pages }: PageProps): JSX.Element => {
   const filteredPages = pages.filter((e) => e.uid !== 'all')
   const orderedPages = filteredPages.sort((a, b) => a.order - b.order)
+  const pagesClassnames = [...orderedPages].map((e) => e.uid.replace('/', ''))
 
   const { setUserNavigated } = useContext(NavigationContext)
 
@@ -29,19 +30,19 @@ const Page = ({ page, pages }: PageProps): JSX.Element => {
   }, [])
 
   return (
-    <section>
+    <main>
       <div className="recipe-preview__header">
         <Title isSplit={true} as="h1">
           all recipes
         </Title>
-        <RecipesNavigation pages={orderedPages} />
+        <RecipesNavigation pages={orderedPages} classnames={pagesClassnames} />
       </div>
       <div className="container recipe-preview">
         {page.recipesCollection.items.map((el, i) => {
           return <RecipePreview el={el} key={i} onClick={handleRecipeCLick} />
         })}
       </div>
-    </section>
+    </main>
   )
 }
 

@@ -1,0 +1,15 @@
+overwrite: true
+schema:
+  - 'https://graphql.contentful.com/content/v1/spaces/ip0p3v3kqvk3':
+      headers:
+        authorization: "Bearer 2y2B7Eq1nXFrNuOhjve3XxsVqdpJOFr7UJhELBFBQW0"
+documents: 'lib/**/*.graphql'
+generates:
+  lib/generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+  lib/graphql.schema.json:
+    plugins:
+      - 'introspection'

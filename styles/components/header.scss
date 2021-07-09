@@ -12,6 +12,7 @@
   padding: 0 6.5rem;
   border-bottom: 1px solid var(--color-black);
   z-index: 99;
+  background-color: #f7f4ed;
   transition: background-color 0.2s ease-out;
 
   @include media('<desktop') {
@@ -26,7 +27,7 @@
 }
 
 .header__scroll {
-  background-color: #f7f4ed;
+  background-color: #f7f4ed !important;
   transition: 0.3s ease-in-out;
 }
 
@@ -36,6 +37,11 @@
 
 .header__background--search {
   background-color: var(--color-background);
+}
+
+.header--recipe {
+  position: absolute;
+  border: none;
 }
 
 .logo-wrapper {
@@ -65,6 +71,24 @@
     width: 20rem;
     max-height: none;
     max-width: none;
+  }
+}
+
+.icon-wrapper {
+  position: relative;
+  flex: 0 0 auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: transparent;
+    z-index: 100000;
+    pointer-events: all;
   }
 }
 
@@ -157,7 +181,7 @@
 
 .close-icon {
   cursor: pointer;
-  width: 1.7rem;
+  width: 1rem;
   position: absolute;
   top: 50%;
   left: 2rem;
@@ -165,6 +189,6 @@
 
   @include media('>phone') {
     left: 6.5rem;
-    width: 2.1rem;
+    width: 1.8rem;
   }
 }

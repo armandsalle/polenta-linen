@@ -1,0 +1,7 @@
+fragment Seo on Seo {
+  title
+  description
+  ogImage {
+    url(transform: { width: 1200, height: 630, resizeStrategy: FILL })
+  }
+}

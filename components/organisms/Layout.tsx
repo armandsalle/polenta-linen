@@ -1,4 +1,4 @@
-import type { SEOContent } from '@/lib/shared/SEO/types'
+import type { Seo } from '@/lib/generated/graphql'
 
 import Header from '@/components/organisms/Header'
 import Footer from '@/components/organisms/Footer'
@@ -7,14 +7,16 @@ import Head from 'next/head'
 
 type LayoutProps = {
   children: React.ReactNode
-  SEO: SEOContent
+  SEO: Seo
   isHeaderScrollable?: boolean
+  isRecipe?: boolean
 }
 
 const Layout = ({
   children,
   SEO,
-  isHeaderScrollable = true,
+  isHeaderScrollable = false,
+  isRecipe = false,
 }: LayoutProps): JSX.Element => {
   return (
     <>
@@ -24,7 +26,6 @@ const Layout = ({
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <title>{SEO.title}</title>
           <meta name="description" content={SEO.description} />
-
           <meta property="og:title" content={SEO.title} />
           <meta property="og:description" content={SEO.description} />
           <meta property="og:type" content="website" />
@@ -53,12 +54,10 @@ const Layout = ({
         </Head>
       )}
 
-      <main>
-        <Header isHeaderScrollable={isHeaderScrollable} />
-        {children}
-        <Footer />
-        <Menu />
-      </main>
+      <Header isHeaderScrollable={isHeaderScrollable} isRecipe={isRecipe} />
+      {children}
+      <Footer />
+      <Menu />
     </>
   )
 }

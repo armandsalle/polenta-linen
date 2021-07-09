@@ -1,13 +1,52 @@
 .recipe__btn {
   font-size: 1rem;
+  line-height: 1;
   text-decoration: none;
   color: var(--color-black);
   background-color: transparent;
   border: 0.1rem solid var(--color-black);
-  padding: 1.7rem 1.6rem;
-  margin: 0 0.8rem 1rem 0;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  margin: 0.75rem 0.8rem 0.75rem 0;
   position: relative;
   overflow: hidden;
+  height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.heritage {
+    margin-right: 1.23rem;
+  }
+  &.sauces-spices,
+  &.light-snacks {
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+    margin-right: 1.2rem;
+  }
+
+  &.light-snacks {
+    margin-right: 0;
+  }
+
+  &.small-plates {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    margin-right: 1rem;
+  }
+
+  &.pasta,
+  &.mains {
+    padding-left: 1.9rem;
+    padding-right: 1.9rem;
+    margin-right: 1.05rem;
+  }
+
+  &.desserts {
+    padding-left: 1.7rem;
+    padding-right: 1.7rem;
+    margin-right: 0rem;
+  }
 
   &.active {
     &::before {
@@ -17,23 +56,76 @@
     background-color: var(--color-btn-hover);
   }
 
+  @include media('<363px') {
+    margin: 0 0.5rem 1rem 0.5rem;
+  }
+
+  @include media('>landscape') {
+    &.heritage,
+    &.sauces-spices,
+    &.light-snacks,
+    &.small-plates,
+    &.pasta,
+    &.mains,
+    &.desserts {
+      padding-left: inherit;
+      padding-right: inherit;
+      margin: 0.75rem 0.8rem 0.75rem 0;
+    }
+  }
+
   @include media('>tablet') {
+    height: auto;
     font-size: 1.2rem;
-    margin-right: 1rem;
+
+    &.heritage,
+    &.sauces-spices,
+    &.light-snacks,
+    &.small-plates,
+    &.pasta,
+    &.mains,
+    &.desserts {
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      padding: 1.9rem 2.5rem;
+    }
   }
 
   @include media('>desktop') {
-    font-size: 1.9rem;
-    margin-right: 2rem;
+    font-size: 1.5rem;
+
+    &.heritage,
+    &.sauces-spices,
+    &.light-snacks,
+    &.small-plates,
+    &.pasta,
+    &.mains,
+    &.desserts {
+      padding: 2.4rem 3.4rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
   }
 
-  @include media('>desktop') {
-    margin-right: 3rem;
+  @include media('>desktop-xl') {
+    font-size: 1.6rem;
+
+    &.heritage,
+    &.sauces-spices,
+    &.light-snacks,
+    &.small-plates,
+    &.pasta,
+    &.mains,
+    &.desserts {
+      padding: 2.7rem 4.6rem;
+      margin-right: 1.5rem;
+      margin-left: 1.5rem;
+    }
   }
 }
 
 .recipe__btn::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -42,7 +134,7 @@
   background-color: var(--color-btn-hover);
   z-index: -1;
   transform: translateY(100%);
-  transition: transform .25s cubic-bezier(0.7, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.7, 0, 0.2, 1);
 }
 
 @media (hover: hover) {

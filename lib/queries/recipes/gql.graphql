@@ -1,0 +1,17 @@
+query AllRecipes {
+  recipeCollection {
+    items {
+      uid
+      tags
+      title
+      thumbnail {
+        title
+        url(transform: { quality: 50, width: 300 })
+      }
+      sys {
+        id
+      }
+      subtitle
+    }
+  }
+}

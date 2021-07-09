@@ -1,12 +1,11 @@
-import type { Home as HomeType } from '@/lib/queries/home/types'
 import type { GetStaticProps } from 'next'
-
 import Title from '@/components/atoms/Title'
 import { client } from '@/lib/client'
 import ResponsiveImage from '@/components/atoms/ResponsiveImage'
 import FeaturedPage from '@/components/molecules/FeaturedPage'
 import { useContext, useEffect } from 'react'
 import { NavigationContext } from '@/contexts/animationContext'
+import { Home as HomeType } from '@/lib/generated/graphql'
 
 type HomeProps = {
   home: HomeType
@@ -20,7 +19,7 @@ const Home = ({ home }: HomeProps): JSX.Element => {
   }, [])
 
   return (
-    <section className="container home">
+    <main className="container home">
       <div className="home__header">
         <Title as="h1" isSplit={true}>
           {home.title}
@@ -40,7 +39,7 @@ const Home = ({ home }: HomeProps): JSX.Element => {
           <FeaturedPage key={i} {...el} />
         ))}
       </div>
-    </section>
+    </main>
   )
 }
 
@@ -51,7 +50,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       home,
       SEO: home.seo,
-      isHeaderScrollable: false,
+      isHeaderScrollable: true,
     },
   }
 }

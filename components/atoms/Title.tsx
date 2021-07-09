@@ -7,9 +7,9 @@ type TitleProps = {
 }
 
 const Title = ({ children, isSplit = false, as }: TitleProps): JSX.Element => {
-  let text
-  let end
-  let start
+  let text: string[]
+  let end: string[]
+  let start: string
 
   if (typeof children === 'string') {
     text = children.trim().split(' ')

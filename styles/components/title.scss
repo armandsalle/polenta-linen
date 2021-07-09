@@ -9,17 +9,17 @@
 }
 
 .h1 {
-  font-size: 4.2rem;
+  font-size: 4.5rem;
   line-height: 0.87;
   letter-spacing: -0.02em;
 
-  @include media('>tablet') {
-    font-size: 6rem;
-  }
+  // @include media('>tablet') {
+  //   font-size: 6rem;
+  // }
 
-  @include media('>desktop') {
-    font-size: 6rem;
-  }
+  // @include media('>desktop') {
+  //   font-size: 6rem;
+  // }
 }
 
 .h2 {

@@ -4,19 +4,20 @@ import {
   NormalizedCacheObject,
 } from '@apollo/client'
 
-import type { Item as PageItem, PagesData } from '@/lib/queries/pages/types'
-import type { Page, PageData } from '@/lib/queries/page/types'
-import type { Story, StoryData } from '@/lib/queries/story/types'
-import type { Recipe, RecipeData } from '@/lib/queries/recipe/types'
-import type { Item, RecipesData } from '@/lib/queries/recipes/types'
-import type { Home, HomeData } from '@/lib/queries/home/types'
-
-import { storyQuery } from '@/lib/queries/story/gql'
-import { homeQuery } from '@/lib/queries/home/gql'
-import { recipesQuery } from '@/lib/queries/recipes/gql'
-import { recipeQuery } from '@/lib/queries/recipe/gql'
-import { pagesQuery } from '@/lib/queries/pages/gql'
-import { pageQuery } from '@/lib/queries/page/gql'
+import {
+  StoryDocument,
+  HomeDocument,
+  AllRecipesDocument,
+  AllRecipesQuery,
+  RecipeDocument,
+  RecipeQuery,
+  HeritageQuery,
+  HeritageDocument,
+  PageDocument,
+  PageQuery,
+  HomeQuery,
+  StoryQuery,
+} from './generated/graphql'
 
 export class Client {
   uri: string
@@ -35,66 +36,60 @@ export class Client {
     })
   }
 
-  getStory = async (): Promise<{ story: Story }> => {
-    const { data }: StoryData = await this.client.query({
-      query: storyQuery,
+  getStory = async (): Promise<StoryQuery> => {
+    const { data } = await this.client.query<StoryQuery>({
+      query: StoryDocument,
     })
 
-    const story = data.story
-
-    return { story }
+    return data
   }
 
-  getHome = async (): Promise<{ home: Home }> => {
-    const { data }: HomeData = await this.client.query({
-      query: homeQuery,
+  getHome = async (): Promise<HomeQuery> => {
+    const { data } = await this.client.query<HomeQuery>({
+      query: HomeDocument,
     })
 
-    const home = data.home
-
-    return { home }
+    return data
   }
 
-  getAllRecipes = async (): Promise<{ items: Item[] }> => {
-    const { data }: RecipesData = await this.client.query({
-      query: recipesQuery,
+  getAllRecipes = async (): Promise<
+    AllRecipesQuery['recipeCollection']['items']
+  > => {
+    const { data } = await this.client.query<AllRecipesQuery>({
+      query: AllRecipesDocument,
     })
 
-    const items = data.recipeCollection.items
-
-    return { items }
+    return data.recipeCollection.items
   }
 
-  getRecipe = async (id: string): Promise<{ recipe: Recipe }> => {
-    const { data }: RecipeData = await this.client.query({
-      query: recipeQuery,
+  getRecipe = async (
+    id: string
+  ): Promise<{ recipe: RecipeQuery['recipe'] }> => {
+    const { data } = await this.client.query<RecipeQuery>({
+      query: RecipeDocument,
       variables: { id },
     })
 
-    const recipe = data.recipe
-
-    return { recipe }
+    return { recipe: data.recipe }
   }
 
-  getPages = async (): Promise<{ pages: PageItem[] }> => {
-    const { data }: PagesData = await this.client.query({
-      query: pagesQuery,
+  getPages = async (): Promise<{
+    pages: HeritageQuery['heritageCollection']['items']
+  }> => {
+    const { data } = await this.client.query<HeritageQuery>({
+      query: HeritageDocument,
     })
 
-    const pages = data.heritageCollection.items
-
-    return { pages }
+    return { pages: data.heritageCollection.items }
   }
 
-  getPage = async (id: string): Promise<{ page: Page }> => {
-    const { data }: PageData = await this.client.query({
-      query: pageQuery,
+  getPage = async (id: string): Promise<{ page: PageQuery['heritage'] }> => {
+    const { data } = await this.client.query<PageQuery>({
+      query: PageDocument,
       variables: { id },
     })
 
-    const page = data.heritage
-
-    return { page }
+    return { page: data.heritage }
   }
 }
 

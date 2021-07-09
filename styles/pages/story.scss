@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 6rem;
+  min-height: calc(100vh - 8rem - 11rem);
 
   @include media('>phone') {
     margin-top: 11rem;
@@ -13,7 +14,8 @@
     margin-top: 20rem;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    min-height: calc(100vh - 20rem - 9rem - 14rem);
   }
 
   @include media('>desktop') {
@@ -21,12 +23,15 @@
     margin-top: 18.5rem;
     margin-bottom: 7.7rem;
     align-items: center;
+    justify-content: flex-start;
+    min-height: calc(100vh - 18.5rem - 7.7rem - 14rem);
   }
 
   @include media('>desktop-xl') {
     max-width: 154.6rem;
     margin-top: 22.4rem;
     margin-bottom: 11.5rem;
+    min-height: calc(100vh - 22.4rem - 11.5rem - 14rem);
   }
 
   &__hero {
@@ -69,35 +74,41 @@
     margin: 0 auto;
 
     & .h1 {
+      font-size: 4.2rem;
+
       @include media('>tablet') {
-        font-size: 4.5rem;
+        font-size: 3rem;
       }
 
       @include media('>desktop') {
-        font-size: 6rem;
+        font-size: 4.5rem;
+      }
+
+      @include media('>desktop-xl') {
+        font-size: 5rem;
       }
     }
 
     @include media('>tablet') {
       padding: 0;
-      margin: 39rem 0 0 5.9rem;
+      margin: 4rem 0 0 5.9rem;
       max-width: unset;
     }
 
     @include media('>desktop') {
       margin-top: 0;
-      margin-left: 6.5rem;
-      width: 65.8rem;
+      margin-left: 10.7rem;
+      width: 53.1rem;
     }
 
     @include media('>desktop-xl') {
-      width: 72.4rem;
+      width: 63.5rem;
       margin-left: auto;
     }
   }
 
   &__text {
-    margin: 3.5rem 0;
+    margin: 4.3rem 0 3.5rem;
 
     @include media('>desktop') {
       margin: 5.5rem 0;
@@ -109,11 +120,11 @@
 
     & p {
       font-size: clamp(1.6rem, 4.26vw, 1.8rem);
-      letter-spacing: .01em;
+      letter-spacing: 0.01em;
 
       @include media('>desktop') {
-        font-size: 2.5rem;
-        line-height: 1.6;
+        // font-size: 2.5rem;
+        // line-height: 1.6;
       }
     }
   }
@@ -121,7 +132,7 @@
   .signature {
     font-size: 2.5rem;
     line-height: 1.6;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
     font-family: 'Nothing';
 
     @include media('>tablet') {
