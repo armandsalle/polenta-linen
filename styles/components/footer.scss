@@ -10,15 +10,16 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2.5rem 0;
+  padding: 1.5rem 0;
   justify-content: space-between;
 
   @include media('>phone') {
+    padding: 2rem 0;
     justify-content: unset;
   }
 
-  @include media('>tablet') {
-    padding: 5.5rem 0;
+  @include media('>desktop') {
+    padding: 3rem 0;
   }
 }
 
