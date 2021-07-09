@@ -1715,7 +1715,7 @@ export const SliderFragmentDoc = gql`
     ... on AssetCollection {
       items {
         title
-        url(transform: {quality: 70, width: 400})
+        url(transform: {quality: 80, width: 700})
       }
     }
   }
@@ -1879,7 +1879,7 @@ export const RecipeDocument = gql`
     subtitle
     thumbnail {
       title
-      url(transform: {quality: 70, width: 500})
+      url(transform: {quality: 80, width: 800})
     }
     cooksNote {
       json
@@ -1938,7 +1938,7 @@ export const AllRecipesDocument = gql`
       title
       thumbnail {
         title
-        url(transform: {quality: 50, width: 300})
+        url(transform: {quality: 80, width: 600})
       }
       sys {
         id
@@ -1985,7 +1985,7 @@ export const StoryDocument = gql`
     signature
     photo {
       title
-      url(transform: {width: 560})
+      url(transform: {width: 800})
     }
     seo {
       ...Seo

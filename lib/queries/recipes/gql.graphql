@@ -6,7 +6,7 @@ query AllRecipes {
       title
       thumbnail {
         title
-        url(transform: { quality: 50, width: 300 })
+        url(transform: { quality: 80, width: 600 })
       }
       sys {
         id
