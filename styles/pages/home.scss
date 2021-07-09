@@ -9,12 +9,11 @@
     padding: 0 5.4rem 3.9rem 5.4rem;
 
     @include media('>tablet') {
-      padding: 0 17.4rem 18.9rem 17.4rem;
+      justify-content: flex-start;
     }
 
     @include media('>desktop') {
       padding: 0 19.3rem 11.3rem 19.3rem;
-      justify-content: flex-start;
     }
 
     @include media('>desktop-xl') {
