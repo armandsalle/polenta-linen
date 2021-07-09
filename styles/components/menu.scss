@@ -28,10 +28,9 @@
     transform: translate(-50%, -50%);
     max-width: 30rem;
     width: 100%;
-    transition: opacity .3s ease-out;
+    transition: opacity 0.3s ease-out;
 
     @media (hover: hover) {
-
       &:hover .separator,
       &:hover .menu__link__number {
         opacity: 0.2;
@@ -53,10 +52,9 @@
     align-items: flex-end;
     text-decoration: none;
     color: var(--color-black);
-    padding: .8rem 0;
+    padding: 0.8rem 0;
 
     @media (hover: hover) {
-
       &:hover .separator,
       &:hover .menu__link__number {
         opacity: 1;
@@ -80,6 +78,10 @@
       text-transform: uppercase;
 
       @include media('>landscape') {
+        font-size: 4rem;
+      }
+
+      @include media('>tablet') {
         font-size: 4.5rem;
       }
 
@@ -92,7 +94,7 @@
       display: block;
       font-size: 1.5rem;
       line-height: 0.9;
-      transition: opacity .3s ease-out;
+      transition: opacity 0.3s ease-out;
 
       @include media('>landscape') {
         font-size: 2.5rem;
@@ -105,7 +107,7 @@
       height: 1px;
       background-color: var(--color-black);
       margin: 0 1rem;
-      transition: opacity .3s ease-out;
+      transition: opacity 0.3s ease-out;
 
       @include media('>landscape') {
         width: 20rem;
