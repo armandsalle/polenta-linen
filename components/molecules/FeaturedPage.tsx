@@ -1,4 +1,4 @@
-import type { Item } from '@/lib/queries/home/types'
+import type { Home } from '@/lib/generated/graphql'
 
 import Link from 'next/link'
 import Title from '@/components/atoms/Title'
@@ -9,7 +9,7 @@ const FeaturedPage = ({
   thumbnail,
   page,
   description,
-}: Item): JSX.Element => {
+}: Home['featuredPageCollection']['items'][0]): JSX.Element => {
   return (
     <div className="featured-page-wrapper">
       <Link href={`/${page.uid}`}>

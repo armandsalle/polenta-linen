@@ -1,11 +1,12 @@
-import type { Item } from '@/lib/queries/recipes/types'
-import { Item as PageItem } from '@/lib/queries/page/types'
+import type { AllRecipesQuery, PageQuery } from '@/lib/generated/graphql'
 
 import ResponsiveImage from '@/components/atoms/ResponsiveImage'
 import Link from 'next/link'
 
 type RecipePreviewProps = {
-  el: Item | PageItem
+  el:
+    | AllRecipesQuery['recipeCollection']['items'][0]
+    | PageQuery['heritage']['recipesCollection']['items'][0]
   onClick: () => void
 }
 

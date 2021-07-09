@@ -1,4 +1,4 @@
-import type { Recipe as RecipeType } from '@/lib/queries/recipe/types'
+import type { Recipe as RecipeType } from '@/lib/generated/graphql'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 
 import { client } from '@/lib/client'
@@ -12,7 +12,7 @@ type RecipeProps = {
 
 const Recipe = ({ recipe }: RecipeProps): JSX.Element => {
   return (
-    <section className="container recipe">
+    <main className="container recipe">
       <div className="recipe__header">
         <RecipeSlider images={recipe.sliderCollection.items} />
         <div className="recipe__title-wrapper">
@@ -61,12 +61,12 @@ const Recipe = ({ recipe }: RecipeProps): JSX.Element => {
           )}
         </div>
       </div>
-    </section>
+    </main>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
-  const { items } = await client.getAllRecipes()
+  const items = await client.getAllRecipes()
   const [id] = items.filter((e) => e.uid === slug)
   const { recipe } = await client.getRecipe(id.sys.id)
 
@@ -74,12 +74,13 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
     props: {
       recipe,
       SEO: recipe.seo,
+      isRecipe: true,
     },
   }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { items } = await client.getAllRecipes()
+  const items = await client.getAllRecipes()
 
   const paths = items.map((e) => ({
     params: {

@@ -1,5 +1,4 @@
 import type { GetStaticProps } from 'next'
-import type { Story as StoryType } from '@/lib/queries/story/types'
 
 import { client } from '@/lib/client'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -7,6 +6,7 @@ import ResponsiveImage from '@/components/atoms/ResponsiveImage'
 import Title from '@/components/atoms/Title'
 import { useContext, useEffect } from 'react'
 import { NavigationContext } from '@/contexts/animationContext'
+import { Story as StoryType } from '@/lib/generated/graphql'
 
 type StoryProps = {
   story: StoryType
@@ -20,7 +20,7 @@ const Story = ({ story }: StoryProps): JSX.Element => {
   }, [])
 
   return (
-    <section className="container story">
+    <main className="container story">
       <div className="story__hero">
         <ResponsiveImage
           className="story__image"
@@ -37,7 +37,7 @@ const Story = ({ story }: StoryProps): JSX.Element => {
         </div>
         <p className="signature">{story.signature}</p>
       </div>
-    </section>
+    </main>
   )
 }
 

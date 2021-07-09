@@ -1,0 +1,16 @@
+query Story {
+  story(id: "4UAL9RZSXVKduHbgZTW2TN") {
+    title
+    description {
+      json
+    }
+    signature
+    photo {
+      title
+      url(transform: { width: 560 })
+    }
+    seo {
+      ...Seo
+    }
+  }
+}

@@ -45,7 +45,7 @@
   &__header {
     position: relative;
     padding-bottom: 6rem;
-    margin-top: 6rem;
+    padding-top: 6rem;
     width: 100%;
 
     &::after {
@@ -64,30 +64,29 @@
     }
 
     @include media('>phone') {
-      margin-top: 11rem;
+      padding-top: 11rem;
     }
 
     @include media('>tablet') {
       max-width: 83.6rem;
       margin: 0 auto;
-      padding-top: 23rem;
-      padding-bottom: 12rem;
+      padding-top: 0;
+      padding-bottom: 0;
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
       justify-content: space-between;
+      min-height: 73rem;
+      height: 100vh;
     }
 
     @include media('>desktop') {
-      padding-top: 24.9rem;
-      padding-bottom: 14rem;
       max-width: 110.7rem;
     }
 
     @include media('>desktop-xl') {
-      padding-top: 21.3rem;
-      padding-bottom: 12rem;
       max-width: 135.2rem;
+      min-height: 100rem;
     }
   }
 
@@ -134,9 +133,10 @@
   }
 
   &__content {
-    max-width: 68rem;
+    padding: 0 2rem;
     margin: 0 auto;
     margin-bottom: 6rem;
+    width: 100%;
 
     & h3 {
       sup {
@@ -152,15 +152,17 @@
     @include media('>tablet') {
       position: relative;
       display: flex;
-      max-width: 89.4rem;
+      // max-width: 89.4rem;
       margin-bottom: 0;
+      padding: 0 6.5rem;
 
       &::after {
         content: '';
         position: absolute;
         top: 0;
         left: 50%;
-        width: 100%;
+        width: calc(100% - 13rem);
+
         height: 1px;
         background-color: var(--color-black);
         transform: translateX(-50%);
@@ -168,11 +170,11 @@
     }
 
     @include media('>desktop') {
-      max-width: 131rem;
+      // max-width: 131rem;
     }
 
     @include media('>desktop-xl') {
-      max-width: 179rem;
+      // max-width: 179rem;
     }
   }
 
@@ -186,8 +188,12 @@
   &__informations,
   &__plating,
   &__note {
-    padding: 6rem 2rem;
+    padding: 6rem 0rem;
     position: relative;
+
+    @include media('>phone') {
+      padding: 6rem 2rem;
+    }
 
     &::after {
       content: '';
@@ -246,15 +252,19 @@
 
   &__text {
     font-size: 1.4rem;
+    line-height: 1.6;
     margin-top: 4rem;
 
+    @include media('>tablet') {
+      line-height: 2.3;
+    }
+
     @include media('>desktop') {
-      margin-top: 9rem;
-      font-size: 1.9rem;
+      margin-top: 5rem;
     }
 
     @include media('>desktop-xl') {
-      margin-top: 9.7rem;
+      margin-top: 7rem;
     }
 
     ul {

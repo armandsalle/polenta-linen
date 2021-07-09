@@ -22,8 +22,6 @@ html {
   height: -webkit-fill-available;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: none;
-  //-webkit-font-smoothing: subpixel-antialiased;
-  //-moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -38,4 +36,6 @@ body {
   -webkit-overflow-scrolling: none;
   overflow-x: hidden;
   position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

@@ -6,7 +6,7 @@
   position: relative;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -21,6 +21,11 @@
   }
 
   @include media('>tablet') {
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
     &:nth-child(even) {
       & .featured-page {
         flex-direction: row-reverse;
@@ -36,6 +41,7 @@
   @include media('>desktop-xl') {
     margin-top: 9rem;
     padding-bottom: 9rem;
+    min-height: auto;
 
     &:nth-child(even) {
       .featured-page__thumbnail {
@@ -101,7 +107,12 @@
       padding-bottom: 100%;
       overflow: hidden;
 
-      &>div {
+      @include media('>tablet') {
+        height: 100%;
+        padding-bottom: 0;
+      }
+
+      & > div {
         transition: transform 0.4s ease-out;
         position: relative;
 
@@ -125,7 +136,7 @@
           z-index: 1;
           background-color: rgba(34, 34, 34, 0.329);
           opacity: 0;
-          transition: opacity .3s ease-out;
+          transition: opacity 0.3s ease-out;
         }
       }
     }
@@ -147,8 +158,8 @@
         font-size: 4.5rem;
       }
 
-      @include media('>desktop') {
-        font-size: 6rem;
+      @include media('>desktop-xl') {
+        font-size: 5rem;
       }
     }
 
