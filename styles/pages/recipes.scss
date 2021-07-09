@@ -51,6 +51,10 @@
         width: 90%;
         text-align: center;
       }
+
+      & .h1 span {
+        margin-left: 2rem;
+      }
     }
 
     @include media('>phone') {
@@ -80,7 +84,7 @@
     padding-top: 100%;
     overflow: hidden;
 
-    &>div {
+    & > div {
       transition: transform 0.4s ease-out;
       position: relative;
 
@@ -94,7 +98,7 @@
         z-index: 1;
         background-color: rgba(34, 34, 34, 0.329);
         opacity: 0;
-        transition: opacity .3s ease-out;
+        transition: opacity 0.3s ease-out;
       }
     }
 
@@ -133,9 +137,8 @@
 }
 
 @media (hover: hover) {
-
-  .recipe-preview__link:hover .recipe-preview__image>div,
-  .search__link:hover .search__image>div {
+  .recipe-preview__link:hover .recipe-preview__image > div,
+  .search__link:hover .search__image > div {
     transform: scale(1.05);
 
     &::after {
