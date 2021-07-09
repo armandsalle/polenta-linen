@@ -7,7 +7,7 @@ query Story {
     signature
     photo {
       title
-      url(transform: { width: 800 })
+      url(transform: { width: 600 })
     }
     seo {
       ...Seo

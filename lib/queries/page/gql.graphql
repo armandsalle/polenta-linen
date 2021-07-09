@@ -6,7 +6,7 @@ query Page($id: String!) {
         uid
         thumbnail {
           title
-          url
+          url(transform: { quality: 80, width: 400 })
         }
       }
     }
