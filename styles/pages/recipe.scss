@@ -49,7 +49,7 @@
     width: 100%;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -116,7 +116,7 @@
     line-height: 1.35;
     font-style: italic;
     text-transform: uppercase;
-    letter-spacing: .12em;
+    letter-spacing: 0.12em;
     margin-top: 1rem;
 
     @include media('>tablet') {
@@ -156,7 +156,7 @@
       margin-bottom: 0;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 50%;
@@ -177,7 +177,7 @@
   }
 
   &__right {
-    &>article:last-child:after {
+    & > article:last-child:after {
       display: none;
     }
   }
@@ -190,7 +190,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 50%;
