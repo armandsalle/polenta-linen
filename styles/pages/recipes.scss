@@ -60,16 +60,6 @@
     @include media('>phone') {
       padding-top: 28.5rem;
     }
-
-    & .h1 {
-      @include media('>tablet') {
-        font-size: 5.5rem;
-      }
-
-      @include media('>desktop') {
-        font-size: 6rem;
-      }
-    }
   }
 
   &__link {

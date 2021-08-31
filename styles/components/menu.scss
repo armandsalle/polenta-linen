@@ -81,14 +81,6 @@
       @include media('>landscape') {
         font-size: 4rem;
       }
-
-      @include media('>tablet') {
-        font-size: 4.5rem;
-      }
-
-      @include media('>desktop') {
-        font-size: 6rem;
-      }
     }
 
     &__number {

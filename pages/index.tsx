@@ -21,9 +21,11 @@ const Home = ({ home }: HomeProps): JSX.Element => {
   return (
     <main className="container home">
       <div className="home__header">
-        <Title as="h1" isSplit={true}>
-          {home.title}
-        </Title>
+        <div className="home__header__container">
+          <Title as="h1" isSplit={true}>
+            {home.title}
+          </Title>
+        </div>
 
         <div className="home__header__bg">
           <ResponsiveImage

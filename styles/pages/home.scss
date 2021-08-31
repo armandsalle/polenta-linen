@@ -20,6 +20,24 @@
       padding: 0 21.6rem 20rem 21.6rem;
     }
 
+    &__container {
+      width: 100%;
+      margin: 0 auto;
+      max-width: 36.6rem;
+
+      @include media('>tablet') {
+        max-width: 85.1rem;
+      }
+
+      @include media('>desktop') {
+        max-width: 105.4rem;
+      }
+
+      @include media('>desktop-xl') {
+        max-width: 148.9rem;
+      }
+    }
+
     & .h1 {
       max-width: 67.7rem;
 

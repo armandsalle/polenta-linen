@@ -73,22 +73,6 @@
     max-width: 66rem;
     margin: 0 auto;
 
-    & .h1 {
-      font-size: 4.2rem;
-
-      @include media('>tablet') {
-        font-size: 3rem;
-      }
-
-      @include media('>desktop') {
-        font-size: 4.5rem;
-      }
-
-      @include media('>desktop-xl') {
-        font-size: 5rem;
-      }
-    }
-
     @include media('>tablet') {
       padding: 0;
       margin: 4rem 0 0 5.9rem;

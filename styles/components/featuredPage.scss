@@ -153,14 +153,6 @@
 
     & .h2 {
       font-size: 4rem;
-
-      @include media('>tablet') {
-        font-size: 4.5rem;
-      }
-
-      @include media('>desktop-xl') {
-        font-size: 5rem;
-      }
     }
 
     & .subtitle {
